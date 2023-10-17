@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cBtrQRKnab7oM3BwxskJImIBx33ff0HsCcG+qXmqOXoQxxYOthhEDdgefZbBHzB3OasW8Gek8uVrDviTuQzjJw==",
+  "dgSpecHash": "GYTltwnLiq58qVzigC8HwbMsmrm9GLpBApyrCCpwuTsqNQr2xA1Ylp7/5Z4nw92G9MFHRpg1qlPhvCPRnWB+6w==",
   "success": true,
-  "projectFilePath": "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
+  "projectFilePath": "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bradley\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

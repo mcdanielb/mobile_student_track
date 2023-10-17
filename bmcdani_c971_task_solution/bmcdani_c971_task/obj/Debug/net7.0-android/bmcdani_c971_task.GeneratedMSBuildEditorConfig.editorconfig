@@ -12,33 +12,33 @@ build_property.EnableSingleFileAnalyzer = true
 build_property.EnableTrimAnalyzer = false
 build_property.IncludeAllContentForSelfExtract = 
 build_property.RootNamespace = bmcdani_c971_task
-build_property.ProjectDir = F:\Dropbox\WGU\C971\bmcdani_c971_task_solution\bmcdani_c971_task\
+build_property.ProjectDir = F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\
 
-[F:/Dropbox/WGU/C971/bmcdani_c971_task_solution/bmcdani_c971_task/App.xaml]
+[F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[F:/Dropbox/WGU/C971/bmcdani_c971_task_solution/bmcdani_c971_task/AppShell.xaml]
+[F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[F:/Dropbox/WGU/C971/bmcdani_c971_task_solution/bmcdani_c971_task/MainPage.xaml]
+[F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[F:/Dropbox/WGU/C971/bmcdani_c971_task_solution/bmcdani_c971_task/Resources/Styles/Colors.xaml]
+[F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[F:/Dropbox/WGU/C971/bmcdani_c971_task_solution/bmcdani_c971_task/Resources/Styles/Styles.xaml]
+[F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
