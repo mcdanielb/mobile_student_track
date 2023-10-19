@@ -3,36 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bmcdani_c971_task.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout
-            x:Name="termsStackLayout"
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Start"
-            HorizontalOptions="CenterAndExpand">
+    <StackLayout>
+        <ScrollView>
+            <VerticalStackLayout
+                x:Name="termsStackLayout"
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand">
 
-            <Image
-                Source="wgu_logo.png"
-                SemanticProperties.Description="The WGU logo and header"
-                HeightRequest="150"
-                HorizontalOptions="Fill" />
+                <Image
+                    Source="wgu_logo.png"
+                    SemanticProperties.Description="The WGU logo and header"
+                    HeightRequest="150"
+                    HorizontalOptions="Fill" />
 
-            <Label
-                Text="Welcome, please choose a term to view its courses."
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome the WGU student academic term tracker"
-                FontSize="18"
-                HorizontalTextAlignment="Center"
-                Margin="25"/>
+                <Label
+                    Text="Welcome, please choose a term to view its courses."
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Welcome the WGU student academic term tracker"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    Margin="25"/>
+                
+            </VerticalStackLayout>
+        </ScrollView>
 
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
             <Button
                 x:Name="AddTermBtn"
+                Margin="25"
                 Text="Add Term"
                 SemanticProperties.Hint="Add a term"
-                
-                WidthRequest="100" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+                WidthRequest="100"
+                Clicked="AddTermBtn_Clicked" />
+        </StackLayout>
+    </StackLayout>
 
 </ContentPage>

@@ -6,7 +6,7 @@ public partial class CourseView : ContentPage
 {
 	private List<Course> courses;
 
-	public CourseView(string selectedTerm)
+	public CourseView(int selectedTermId)
 	{
 		InitializeComponent();
 
@@ -14,30 +14,30 @@ public partial class CourseView : ContentPage
 		{
 			using (var conn = connectionManager.GetConnection())
 			{
-				courses = GetCoursesForTerm(conn, selectedTerm);
+				courses = GetCoursesForTerm(conn, selectedTermId);
 			}
 		}
 
-		DisplayCourses();
+		UpdateCourses();
 	}
 
-	private List<Course> GetCoursesForTerm(SQLiteConnection conn, string term)
+	private List<Course> GetCoursesForTerm(SQLiteConnection conn, int termId)
 	{
-		return conn.Table<Course>().Where(c => c.Term == term).ToList();
+		return conn.Table<Course>().Where(c => c.TermId == termId).ToList();
 	}
 
-	private void DisplayCourses()
+	private void UpdateCourses()
 	{
 		foreach (var course in courses)
 		{
-			Button button = new Button
+			Button courseButton = new Button
 			{
 				Text = course.Name,
 				FontSize = 18,
 				Margin = new Thickness(0, 5),
 				WidthRequest = 100
 			};
-            coursesStackLayout.Children.Add(button);
+            coursesStackLayout.Children.Add(courseButton);
         }
 	}
 }
