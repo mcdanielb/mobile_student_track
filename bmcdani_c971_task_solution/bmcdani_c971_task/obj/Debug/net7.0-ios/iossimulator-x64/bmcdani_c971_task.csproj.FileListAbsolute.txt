@@ -17,9 +17,8 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\Plugin.LocalNotification.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\SQLite-net.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\SQLitePCLRaw.batteries_v2.dll
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\SQLitePCLRaw.nativelibrary.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\SQLitePCLRaw.core.dll
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\SQLitePCLRaw.provider.dynamic_cdecl.dll
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\SQLitePCLRaw.provider.sqlite3.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\Microsoft.CSharp.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\Microsoft.VisualBasic.Core.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\Microsoft.VisualBasic.dll
@@ -247,6 +246,8 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\Resources\wgu_banner.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\Resources\wgu_logo.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\splash.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\splash@2x.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\resizetizer\r\splash@3x.png

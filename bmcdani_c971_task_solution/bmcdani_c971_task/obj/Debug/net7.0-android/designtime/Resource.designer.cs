@@ -28567,6 +28567,12 @@ namespace bmcdani_c971_task
 			// aapt resource value: 0x7F0700E8
 			public const int tooltip_frame_light = 2131165416;
 			
+			// aapt resource value: 0x7F0700E9
+			public const int wgu_banner = 2131165417;
+			
+			// aapt resource value: 0x7F0700EA
+			public const int wgu_logo = 2131165418;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

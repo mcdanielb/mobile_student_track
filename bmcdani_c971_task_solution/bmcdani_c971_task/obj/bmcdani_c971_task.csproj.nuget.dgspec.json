@@ -97,6 +97,10 @@
               "target": "Package",
               "version": "[10.1.8, )"
             },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.1.6, )"
+            },
             "Xamarin.Android.Glide": {
               "target": "Package",
               "version": "[4.13.2.2, )",
@@ -226,6 +230,10 @@
               "target": "Package",
               "version": "[10.1.8, )"
             },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.1.6, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"
@@ -299,6 +307,10 @@
             "Plugin.LocalNotification": {
               "target": "Package",
               "version": "[10.1.8, )"
+            },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.1.6, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -384,6 +396,10 @@
             "Plugin.LocalNotification": {
               "target": "Package",
               "version": "[10.1.8, )"
+            },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.1.6, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",

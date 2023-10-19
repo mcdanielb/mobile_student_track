@@ -5,34 +5,32 @@
 
     <ScrollView>
         <VerticalStackLayout
+            x:Name="termsStackLayout"
             Spacing="25"
             Padding="30,0"
-            VerticalOptions="Start">
+            VerticalOptions="Start"
+            HorizontalOptions="CenterAndExpand">
 
             <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
+                Source="wgu_logo.png"
+                SemanticProperties.Description="The WGU logo and header"
+                HeightRequest="150"
                 HorizontalOptions="Fill" />
 
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Welcome, please choose a term to view its courses."
                 SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="Welcome the WGU student academic term tracker"
                 FontSize="18"
-                HorizontalOptions="Center" />
+                HorizontalTextAlignment="Center"
+                Margin="25"/>
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Center" />
+                x:Name="AddTermBtn"
+                Text="Add Term"
+                SemanticProperties.Hint="Add a term"
+                
+                WidthRequest="100" />
 
         </VerticalStackLayout>
     </ScrollView>
