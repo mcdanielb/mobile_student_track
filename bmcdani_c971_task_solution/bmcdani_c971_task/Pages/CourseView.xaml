@@ -3,10 +3,76 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bmcdani_c971_task.Pages.CourseView"
              Title="Academic Tracker - Courses">
-    <VerticalStackLayout x:Name="coursesStackLayout">
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout>
+        <StackLayout>
+            <Label
+                x:Name="TermTitleLbl"
+                Text="Test Term Title"
+                FontSize="24"
+                Margin="25"
+                SemanticProperties.Hint="Term Title"
+                VerticalOptions="Start" 
+                HorizontalOptions="Center" />
+        </StackLayout>
+
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="Start Date"
+                       HorizontalOptions="CenterAndExpand" />
+                <DatePicker
+                    HorizontalOptions="CenterAndExpand"
+                    MinimumDate="01/01/2018"
+                    MaximumDate="12/30/2030"
+                    Date="10/18/2023" />
+            </StackLayout>
+
+
+            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="End Date"
+                       HorizontalOptions="CenterAndExpand" />
+                <DatePicker
+                    HorizontalOptions="CenterAndExpand"
+                    MinimumDate="01/02/2018"
+                    MaximumDate="12/31/2030"
+                    Date="10/19/2023" />
+            </StackLayout>
+        </Grid>
+
+        <ScrollView>
+            <VerticalStackLayout
+                x:Name="coursesStackLayout"
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand">
+                
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand"
+            Margin="30">
+
+            <Button
+                x:Name="EditTermBtn"
+                Margin="5"
+                Text="Add Course"
+                SemanticProperties.Hint="Add a course"
+                WidthRequest="125" />
+
+            <Button
+                x:Name="DeleteTermBtn"
+                Margin="5"
+                Text="Delete Term"
+                SemanticProperties.Hint="Add a course"
+                WidthRequest="125" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

@@ -32,7 +32,7 @@
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
             <Button
                 x:Name="AddTermBtn"
-                Margin="25"
+                Margin="30"
                 Text="Add Term"
                 SemanticProperties.Hint="Add a term"
                 WidthRequest="100"

@@ -1025,3 +1025,4 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\stamp\_GenerateJavaStubs.stamp
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\stamp\_GeneratePackageManagerJava.stamp
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\stamp\_ResolveLibraryProjectImports.stamp
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\AcademicTrackerSQLite.db3

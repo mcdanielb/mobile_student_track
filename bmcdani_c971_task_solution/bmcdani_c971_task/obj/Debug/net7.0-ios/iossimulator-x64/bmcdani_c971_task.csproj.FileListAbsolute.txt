@@ -225,6 +225,7 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\libxamarin-dotnet-debug.dylib
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\libxamarin-dotnet.a
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\build-signature\signature
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\mauiimage.inputs
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\mauifont.inputs
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\iossimulator-x64\mauisplash.inputs
