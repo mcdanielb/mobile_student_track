@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="bmcdani_c971_task.MainPage">
 
-    <StackLayout>
-        <VerticalStackLayout
-            Spacing="25"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <VerticalStackLayout Grid.Row="0"
+            Spacing="10"
             Padding="30,0"
             VerticalOptions="Start"
             HorizontalOptions="CenterAndExpand">
@@ -17,7 +23,7 @@
                 HorizontalOptions="Fill" />
 
             <Label
-                Text="Welcome, please choose a term to view its courses."
+                Text="Welcome! Please choose a term to view its courses."
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome the WGU student academic term tracker"
                 FontSize="18"
@@ -26,21 +32,39 @@
 
         </VerticalStackLayout>
         
-        <ScrollView>
+        <ScrollView Grid.Row="1">
             <StackLayout x:Name="termsStackLayout">
                 
             </StackLayout>
         </ScrollView>
 
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+        <StackLayout Grid.Row="2"
+                     Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     Spacing="-100">
+            
             <Button
+                Grid.Row="2"
                 x:Name="AddTermBtn"
                 Margin="30"
                 Text="Add Term"
                 SemanticProperties.Hint="Add a term"
-                WidthRequest="100"
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="125"
+                BackgroundColor="Crimson"
                 Clicked="AddTermBtn_Clicked" />
+
+            <Button
+                x:Name="DeleteTermBtn"
+                Margin="0, 30"
+                Text="Delete Term"
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="125"
+                BackgroundColor="Crimson"
+                Clicked="DeleteTermBtn_Clicked" />
+                
         </StackLayout>
-    </StackLayout>
+
+    </Grid>
 
 </ContentPage>
