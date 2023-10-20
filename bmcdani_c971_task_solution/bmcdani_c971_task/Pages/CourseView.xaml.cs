@@ -7,6 +7,7 @@ public partial class CourseView : ContentPage
 	private List<Course> courses;
     private int selectedTermId;
     private string selectedTermName;
+    private bool buttonClicked = false;
 
 	public CourseView(int termId, string termName)
 	{
@@ -15,36 +16,39 @@ public partial class CourseView : ContentPage
         TermTitleLbl.Text = termName;
         selectedTermId = termId;
         selectedTermName = termName;
-
-		UpdateCourses();
 	}
 
-	private void UpdateCourses()
+	private async Task UpdateCourses()
 	{
-        using (var connectionManager = new SQLiteConnManager<Course>("AcademicTrackerSQLite.db3"))
+        var courses = await DataServices.GetCourses(termId: selectedTermId);
+
+        foreach (var course in courses)
         {
-            using (var conn = connectionManager.GetConnection())
+            Button courseButton = new Button
             {
-                courses = GetCoursesForTerm(conn, selectedTermId);
-
-                foreach (var course in courses)
-                {
-                    Button courseButton = new Button
-                    {
-                        Text = course.Name,
-                        FontSize = 18,
-                        Margin = new Thickness(0, 5),
-                        WidthRequest = 200
-                    };
-                    coursesStackLayout.Children.Add(courseButton);
-                }
-            }
+                Text = course.Name,
+                FontSize = 18,
+                Margin = new Thickness(0, 5),
+                WidthRequest = 200,
+                CommandParameter = course.Id
+            };
+            coursesStackLayout.Children.Add(courseButton);
         }
-        
-	}
+    }
 
-    private List<Course> GetCoursesForTerm(SQLiteConnection conn, int termId)
+    private async void CourseButton_Clicked(object sender, EventArgs e)
     {
-        return conn.Table<Course>().Where(c => c.TermId == termId).ToList();
+        if (buttonClicked) return;
+
+        buttonClicked = true;
+
+        Button clickedButton = (Button)sender;
+        int selectedCourseId = (int)clickedButton.CommandParameter;
+
+        Course selectedCourse = (await DataServices.GetCourses()).FirstOrDefault(c => c.Id == selectedCourseId);
+        if (selectedCourse != null)
+        {
+            await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.Name));
+        }
     }
 }

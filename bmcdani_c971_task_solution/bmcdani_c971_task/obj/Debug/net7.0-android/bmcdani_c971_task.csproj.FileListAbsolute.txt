@@ -1,11 +1,3 @@
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\bmcdani_c971_task.runtimeconfig.json
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\bmcdani_c971_task.dll
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\bmcdani_c971_task.pdb
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task.apk
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task.aab
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task-Signed.aab
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task-Signed.apk
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task-Signed.apk.idsig
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\build.props
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\adb.props
@@ -113,6 +105,14 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\bmcdani_c971_task.AssemblyInfoInputs.cache
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\bmcdani_c971_task.AssemblyInfo.cs
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\bmcdani_c971_task.csproj.CoreCompileInputs.cache
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\bmcdani_c971_task.runtimeconfig.json
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\bmcdani_c971_task.dll
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\bmcdani_c971_task.pdb
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task.apk
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task.aab
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task-Signed.aab
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task-Signed.apk
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\com.companyname.bmcdani_c971_task-Signed.apk.idsig
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\XamlC.stamp
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\bmcdani_c971_task.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\bmcdani_c971_task.pdb
@@ -1025,4 +1025,3 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\stamp\_GenerateJavaStubs.stamp
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\stamp\_GeneratePackageManagerJava.stamp
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\stamp\_ResolveLibraryProjectImports.stamp
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\bin\Debug\net7.0-android\AcademicTrackerSQLite.db3

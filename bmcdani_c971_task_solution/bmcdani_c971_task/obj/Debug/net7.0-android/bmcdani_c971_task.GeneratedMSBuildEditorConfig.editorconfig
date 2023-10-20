@@ -38,6 +38,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.Pages.As
 build_metadata.AdditionalFiles.TargetPath = Pages\AssessmentView.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\AssessmentView.xaml
 
+[F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/Pages/CourseDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.Pages.CourseDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\CourseDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\CourseDetail.xaml
+
 [F:/Dropbox/WGU/C971/bmcdani_C971_task_solution/bmcdani_c971_task/Pages/CourseView.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = bmcdani_c971_task.Pages.CourseView.xaml
