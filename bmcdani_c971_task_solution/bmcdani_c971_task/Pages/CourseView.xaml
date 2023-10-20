@@ -61,17 +61,18 @@
             Margin="30">
 
             <Button
-                x:Name="EditTermBtn"
+                x:Name="AddCourseBtn"
                 Margin="5"
                 Text="Add Course"
                 SemanticProperties.Hint="Add a course"
-                WidthRequest="125" />
+                WidthRequest="125"
+                Clicked="AddCourseBtn_Clicked"/>
 
             <Button
                 x:Name="DeleteTermBtn"
                 Margin="5"
                 Text="Delete Term"
-                SemanticProperties.Hint="Add a course"
+                SemanticProperties.Hint="Delete a term"
                 WidthRequest="125" />
         </StackLayout>
     </StackLayout>

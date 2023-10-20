@@ -12,11 +12,15 @@ namespace bmcdani_c971_task
         public MainPage()
         {
             InitializeComponent();
+
+            UpdateTermsAsync();
         }
 
         private async Task UpdateTermsAsync()
         {
             var terms = await DataServices.GetTerms();
+
+            termsStackLayout.Children.Clear();
 
             foreach (var term in terms)
             {
@@ -61,7 +65,8 @@ namespace bmcdani_c971_task
         {
             var name = await App.Current.MainPage.DisplayPromptAsync("Name", "Term name");
             await DataServices.AddTerm(name);
-            
+
+            await UpdateTermsAsync();
         }
     }
 }

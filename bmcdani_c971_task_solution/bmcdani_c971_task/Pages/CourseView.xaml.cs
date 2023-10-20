@@ -16,11 +16,15 @@ public partial class CourseView : ContentPage
         TermTitleLbl.Text = termName;
         selectedTermId = termId;
         selectedTermName = termName;
+
+        UpdateCourses();
 	}
 
 	private async Task UpdateCourses()
 	{
         var courses = await DataServices.GetCourses(termId: selectedTermId);
+
+        coursesStackLayout.Children.Clear();
 
         foreach (var course in courses)
         {
@@ -48,7 +52,12 @@ public partial class CourseView : ContentPage
         Course selectedCourse = (await DataServices.GetCourses()).FirstOrDefault(c => c.Id == selectedCourseId);
         if (selectedCourse != null)
         {
-            await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.Name));
+            // await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.Name));
         }
+    }
+
+    private async void AddCourseBtn_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AddCoursePage(selectedTermId, selectedTermName));
     }
 }

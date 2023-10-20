@@ -4,29 +4,32 @@
              x:Class="bmcdani_c971_task.MainPage">
 
     <StackLayout>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Start"
+            HorizontalOptions="CenterAndExpand">
+
+            <Image
+                Source="wgu_logo.png"
+                SemanticProperties.Description="The WGU logo and header"
+                HeightRequest="150"
+                HorizontalOptions="Fill" />
+
+            <Label
+                Text="Welcome, please choose a term to view its courses."
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome the WGU student academic term tracker"
+                FontSize="18"
+                HorizontalTextAlignment="Center"
+                Margin="25"/>
+
+        </VerticalStackLayout>
+        
         <ScrollView>
-            <VerticalStackLayout
-                x:Name="termsStackLayout"
-                Spacing="25"
-                Padding="30,0"
-                VerticalOptions="Start"
-                HorizontalOptions="CenterAndExpand">
-
-                <Image
-                    Source="wgu_logo.png"
-                    SemanticProperties.Description="The WGU logo and header"
-                    HeightRequest="150"
-                    HorizontalOptions="Fill" />
-
-                <Label
-                    Text="Welcome, please choose a term to view its courses."
-                    SemanticProperties.HeadingLevel="Level2"
-                    SemanticProperties.Description="Welcome the WGU student academic term tracker"
-                    FontSize="18"
-                    HorizontalTextAlignment="Center"
-                    Margin="25"/>
+            <StackLayout x:Name="termsStackLayout">
                 
-            </VerticalStackLayout>
+            </StackLayout>
         </ScrollView>
 
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
