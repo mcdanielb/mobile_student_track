@@ -6,30 +6,30 @@ public partial class AddTermPage : ContentPage
 	{
 		InitializeComponent();
 
-		TermStartDatePicker.DateSelected += (s, e) =>
+		AddTermStartDatePicker.DateSelected += (s, e) =>
 		{
-			TermEndDatePicker.MinimumDate = TermStartDatePicker.Date;
-			if (TermStartDatePicker.Date > TermEndDatePicker.Date)
+			AddTermEndDatePicker.MinimumDate = AddTermStartDatePicker.Date;
+			if (AddTermStartDatePicker.Date > AddTermEndDatePicker.Date)
 			{
-				TermEndDatePicker.Date = TermStartDatePicker.Date;
+				AddTermEndDatePicker.Date = AddTermStartDatePicker.Date;
 			}
 		};
 
-		TermEndDatePicker.DateSelected += (s, e) =>
+		AddTermEndDatePicker.DateSelected += (s, e) =>
 		{
-			TermStartDatePicker.MaximumDate = TermEndDatePicker.Date;
-			if (TermEndDatePicker.Date > TermStartDatePicker.Date)
+			AddTermStartDatePicker.MaximumDate = AddTermEndDatePicker.Date;
+			if (AddTermEndDatePicker.Date > AddTermStartDatePicker.Date)
 			{
-				TermStartDatePicker.Date = TermEndDatePicker.Date;
+				AddTermStartDatePicker.Date = AddTermEndDatePicker.Date;
 			}
 		};
 	}
 
 	private async void OnAddTerm_Clicked(object sender, EventArgs e)
 	{
-		if (!string.IsNullOrEmpty(TermNameEntry.Text))
+		if (!string.IsNullOrEmpty(AddTermNameEntry.Text))
 		{
-			await DataServices.AddTerm(TermNameEntry.Text, TermStartDatePicker.Date, TermEndDatePicker.Date);
+			await DataServices.AddTerm(AddTermNameEntry.Text, AddTermStartDatePicker.Date, AddTermEndDatePicker.Date);
 			await Navigation.PopAsync();
         }
 		else

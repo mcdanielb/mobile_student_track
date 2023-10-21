@@ -12,30 +12,30 @@ public partial class AddCoursePage : ContentPage
 		this.termId = termId;
 		this.termName = termName;
 
-        CourseStartDatePicker.DateSelected += (s, e) =>
+        AddCourseStartDatePicker.DateSelected += (s, e) =>
         {
-            CourseEndDatePicker.MinimumDate = CourseStartDatePicker.Date;
-            if (CourseStartDatePicker.Date > CourseEndDatePicker.Date)
+            AddCourseEndDatePicker.MinimumDate = AddCourseStartDatePicker.Date;
+            if (AddCourseStartDatePicker.Date > AddCourseEndDatePicker.Date)
             {
-                CourseEndDatePicker.Date = CourseStartDatePicker.Date;
+                AddCourseEndDatePicker.Date = AddCourseStartDatePicker.Date;
             }
         };
 
-        CourseEndDatePicker.DateSelected += (s, e) =>
+        AddCourseEndDatePicker.DateSelected += (s, e) =>
         {
-            CourseStartDatePicker.MaximumDate = CourseEndDatePicker.Date;
-            if (CourseEndDatePicker.Date > CourseStartDatePicker.Date)
+            AddCourseStartDatePicker.MaximumDate = AddCourseEndDatePicker.Date;
+            if (AddCourseEndDatePicker.Date > AddCourseStartDatePicker.Date)
             {
-                CourseStartDatePicker.Date = CourseEndDatePicker.Date;
+                AddCourseStartDatePicker.Date = AddCourseEndDatePicker.Date;
             }
         };
     }
 
 	private async void OnAddCourse_Clicked(object sender, EventArgs e)
 	{
-		if (!string.IsNullOrEmpty(CourseNameEntry.Text))
+		if (!string.IsNullOrEmpty(AddCourseNameEntry.Text))
 		{
-            await DataServices.AddCourse(CourseNameEntry.Text, CourseStartDatePicker.Date, CourseEndDatePicker.Date, StatusPicker.SelectedItem.ToString(), termId);
+            await DataServices.AddCourse(AddCourseNameEntry.Text, AddCourseStartDatePicker.Date, AddCourseEndDatePicker.Date, StatusPicker.SelectedItem.ToString(), termId);
 			await Navigation.PopAsync();
         }
 		else

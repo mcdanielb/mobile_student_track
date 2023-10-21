@@ -78,11 +78,10 @@ namespace bmcdani_c971_task
                 buttonClicked = true;
 
                 int selectedTermId = (int)clickedButton.CommandParameter;
-
                 Term selectedTerm = (await DataServices.GetTerms()).FirstOrDefault(t => t.TermId == selectedTermId);
                 if (selectedTerm != null)
                 {
-                    await Navigation.PushAsync(new CourseView(selectedTermId, selectedTerm.TermName));
+                    await Navigation.PushAsync(new CourseView(selectedTermId, selectedTerm.TermName, selectedTerm.TermStartDate, selectedTerm.TermEndDate));
                 }
             }
         }

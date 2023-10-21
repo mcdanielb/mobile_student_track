@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:bmcdani_c971_task"
+             x:Class="bmcdani_c971_task.Pages.EditTermPage"
+             Title="Edit Term">
+    <StackLayout VerticalOptions="Start"
+                 HorizontalOptions="CenterAndExpand"
+                 Padding="20">
+
+        <Entry x:Name="EditTermNameEntry"
+               HorizontalOptions="Center"
+               Margin="20"/>
+
+        <Label Text="Select Start Date"
+               HorizontalOptions="Center"/>
+
+        <local:CustomDatePicker x:Name="EditTermStartDatePicker"
+                                HorizontalOptions="Center"
+                                Margin="0,0,0,20"/>
+
+        <Label Text="Select End Date"
+               HorizontalOptions="Center"/>
+
+        <local:CustomDatePicker x:Name="EditTermEndDatePicker"
+                                HorizontalOptions="Center"
+                                Margin="0,0,0,20"/>
+
+        <Button Text="Save Changes"
+                Clicked="OnSaveChanges_Clicked"/>
+        
+    </StackLayout>
+</ContentPage>

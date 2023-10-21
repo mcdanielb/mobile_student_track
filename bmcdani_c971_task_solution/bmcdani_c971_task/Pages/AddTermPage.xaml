@@ -9,7 +9,7 @@
                  Padding="20">
         
         <Entry
-            x:Name="TermNameEntry"
+            x:Name="AddTermNameEntry"
             Placeholder="Enter Term Name" 
             HorizontalOptions="Center"
             Margin="20"/>
@@ -19,7 +19,7 @@
             HorizontalOptions="Center" />
         
         <local:CustomDatePicker
-            x:Name="TermStartDatePicker"
+            x:Name="AddTermStartDatePicker"
             HorizontalOptions="Center" 
             Margin="0,0,0,20"/>
         
@@ -28,7 +28,7 @@
             HorizontalOptions="Center" />
         
         <local:CustomDatePicker
-            x:Name="TermEndDatePicker"
+            x:Name="AddTermEndDatePicker"
             HorizontalOptions="Center"
             Margin="0,0,0,20"/>
         

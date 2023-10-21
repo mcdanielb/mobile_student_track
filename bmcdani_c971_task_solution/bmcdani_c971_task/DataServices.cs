@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,8 @@ namespace bmcdani_c971_task
 
             db = new SQLiteAsyncConnection(databasePath);
 
-            await db.DropTableAsync<Term>();
-            await db.DropTableAsync<Course>();
+            //await db.DropTableAsync<Term>();
+            //await db.DropTableAsync<Course>();
 
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
@@ -57,6 +58,29 @@ namespace bmcdani_c971_task
             return term;
         }
 
+        public static async Task<Term> GetTermById(int termId)
+        {
+            await Init();
+
+            var term = await db.Table<Term>().Where(t => t.TermId == termId).FirstOrDefaultAsync();
+            return term;
+        }
+
+        public static async Task UpdateTerm(int termId, string termName, DateTime termStartDate, DateTime termEndDate)
+        {
+            await Init();
+
+            var termToUpdate = await db.Table<Term>().Where(t => t.TermId == termId).FirstOrDefaultAsync();
+            if (termToUpdate != null)
+            {
+                termToUpdate.TermName = termName;
+                termToUpdate.TermStartDate = termStartDate;
+                termToUpdate.TermEndDate = termEndDate;
+
+                await db.UpdateAsync(termToUpdate);
+            }
+        }
+
         // Course methods
 
         public static async Task AddCourse(string courseName, DateTime courseStartDate, DateTime courseEndDate, string status, int termId)
@@ -74,11 +98,11 @@ namespace bmcdani_c971_task
             await db.InsertAsync(course);
         }
 
-        public static async Task RemoveCourse(int id)
+        public static async Task RemoveCourse(int courseId)
         {
             await Init();
 
-            await db.DeleteAllAsync<Course>();
+            await db.DeleteAsync<Course>(courseId);
         }
 
         public static async Task<IEnumerable<Course>> GetCourses(int? TermId = null)

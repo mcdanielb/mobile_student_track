@@ -13,7 +13,7 @@
             HorizontalOptions="Center"/>
         
         <Entry
-            x:Name="CourseNameEntry"
+            x:Name="AddCourseNameEntry"
             Placeholder="Course Name"
             HorizontalOptions="Center"
             Margin="0,0,0,20"/>
@@ -24,7 +24,7 @@
             HorizontalOptions="Center"/>
 
         <local:CustomDatePicker
-            x:Name="CourseStartDatePicker"
+            x:Name="AddCourseStartDatePicker"
             HorizontalOptions="Center"
             Margin="0,0,0,20"/>
 
@@ -34,7 +34,7 @@
             HorizontalOptions="Center"/>
 
         <local:CustomDatePicker
-            x:Name="CourseEndDatePicker"
+            x:Name="AddCourseEndDatePicker"
             HorizontalOptions="Center"
             Margin="0,0,0,20"/>
 
