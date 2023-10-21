@@ -102,8 +102,8 @@ public partial class CourseView : ContentPage
         if (term != null)
         {
             TermTitleLbl.Text = term.TermName;
-            TermStartDatePicker.Date = termStartDate;
-            TermEndDatePicker.Date = termEndDate;
+            TermStartDatePicker.Date = term.TermStartDate;
+            TermEndDatePicker.Date = term.TermEndDate;
         }
 
         UpdateCoursesAsync();

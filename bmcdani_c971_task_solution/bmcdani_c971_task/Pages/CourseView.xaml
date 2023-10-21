@@ -44,6 +44,8 @@
                        HorizontalOptions="CenterAndExpand" />
 
                 <local:CustomDatePicker
+                    TextColor="Black"
+                    IsEnabled="False"
                     x:Name="TermStartDatePicker"
                     HorizontalOptions="Center" />
             </StackLayout>
