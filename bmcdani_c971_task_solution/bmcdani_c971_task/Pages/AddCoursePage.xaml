@@ -7,47 +7,40 @@
     <StackLayout VerticalOptions="Start"
                  HorizontalOptions="CenterAndExpand"
                  Padding="20">
-        <Label
-            Text="Enter Course Name"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"/>
         
-        <Entry
-            x:Name="AddCourseNameEntry"
-            Placeholder="Course Name"
-            HorizontalOptions="Center"
-            Margin="0,0,0,20"/>
-
-        <Label
-            Text="Select Course Start Date"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"/>
-
-        <local:CustomDatePicker
-            x:Name="AddCourseStartDatePicker"
-            HorizontalOptions="Center"
-            Margin="0,0,0,20"/>
-
-        <Label
-            Text="Select Course End Date"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"/>
-
-        <local:CustomDatePicker
-            x:Name="AddCourseEndDatePicker"
-            HorizontalOptions="Center"
-            Margin="0,0,0,20"/>
-
-        <Label
-            Text="Select Course Status"
-            FontAttributes="Bold"
-            HorizontalOptions="Center"/>
+        <Label Text="Enter Course Name"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
         
-        <Picker
-            x:Name="StatusPicker"
-            Title="Select Status"
-            HorizontalOptions="Center"
-            Margin="0,0,0,20">
+        <Entry x:Name="AddCourseNameEntry"
+               Placeholder="Course Name"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+        <Label Text="Select Course Start Date"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <local:CustomDatePicker x:Name="AddCourseStartDatePicker"
+                                HorizontalOptions="Center"
+                                Margin="0,0,0,20"/>
+
+        <Label Text="Select Course End Date"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <local:CustomDatePicker x:Name="AddCourseEndDatePicker"
+                                HorizontalOptions="Center"
+                                Margin="0,0,0,20"/>
+
+        <Label Text="Select Course Status"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+        
+        <Picker x:Name="AddStatusPicker"
+                Title="Select Status"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Planned</x:String>

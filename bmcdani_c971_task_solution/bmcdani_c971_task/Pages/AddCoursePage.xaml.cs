@@ -35,7 +35,7 @@ public partial class AddCoursePage : ContentPage
 	{
 		if (!string.IsNullOrEmpty(AddCourseNameEntry.Text))
 		{
-            await DataServices.AddCourse(AddCourseNameEntry.Text, AddCourseStartDatePicker.Date, AddCourseEndDatePicker.Date, StatusPicker.SelectedItem.ToString(), termId);
+            await DataServices.AddCourse(AddCourseNameEntry.Text, AddCourseStartDatePicker.Date, AddCourseEndDatePicker.Date, AddStatusPicker.SelectedItem.ToString(), termId);
 			await Navigation.PopAsync();
         }
 		else
