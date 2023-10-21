@@ -1,29 +1,48 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:bmcdani_c971_task"
              x:Class="bmcdani_c971_task.Pages.CourseView"
-             Title="Academic Tracker - Courses">
-    <StackLayout>
-        <StackLayout>
+             Title="Courses">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <VerticalStackLayout Grid.Row="0"
+            Spacing="10"
+            Padding="30,0"
+            VerticalOptions="Center"
+            HorizontalOptions="CenterAndExpand">
+
             <Label
                 x:Name="TermTitleLbl"
-                Text="Test Term Title"
+                Text="Term Title"
                 FontSize="24"
                 Margin="25"
                 SemanticProperties.Hint="Term Title"
                 VerticalOptions="Start" 
                 HorizontalOptions="Center" />
-        </StackLayout>
+            
+        </VerticalStackLayout>
 
-        <Grid >
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+            <StackLayout Grid.Column="0"
+                         Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand">
+                
                 <Label Text="Start Date"
                        HorizontalOptions="CenterAndExpand" />
+                
                 <DatePicker
                     HorizontalOptions="CenterAndExpand"
                     MinimumDate="01/01/2018"
@@ -31,10 +50,14 @@
                     Date="10/18/2023" />
             </StackLayout>
 
-
-            <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                <Label Text="End Date"
-                       HorizontalOptions="CenterAndExpand" />
+            <StackLayout Grid.Column="1"
+                         Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand">
+                
+                <Label
+                    Text="End Date"
+                    HorizontalOptions="CenterAndExpand" />
+                
                 <DatePicker
                     HorizontalOptions="CenterAndExpand"
                     MinimumDate="01/02/2018"
@@ -43,37 +66,38 @@
             </StackLayout>
         </Grid>
 
-        <ScrollView>
+        <ScrollView Grid.Row="2">
             <VerticalStackLayout
-                x:Name="coursesStackLayout"
-                Spacing="25"
-                Padding="30,0"
-                VerticalOptions="Start"
-                HorizontalOptions="CenterAndExpand">
+                x:Name="coursesStackLayout">
                 
             </VerticalStackLayout>
         </ScrollView>
 
-        <StackLayout
-            Orientation="Horizontal"
-            HorizontalOptions="Center"
-            VerticalOptions="EndAndExpand"
-            Margin="30">
+        <StackLayout Grid.Row="3"
+                     Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="FillAndExpand"
+                     Spacing="-40">
 
             <Button
                 x:Name="AddCourseBtn"
-                Margin="5"
+                Margin="30"
                 Text="Add Course"
                 SemanticProperties.Hint="Add a course"
+                HorizontalOptions="FillAndExpand"
                 WidthRequest="125"
+                BackgroundColor="Crimson"
                 Clicked="AddCourseBtn_Clicked"/>
 
             <Button
-                x:Name="DeleteTermBtn"
-                Margin="5"
-                Text="Delete Term"
-                SemanticProperties.Hint="Delete a term"
-                WidthRequest="125" />
+                x:Name="DeleteCourseBtn"
+                Margin="30"
+                Text="Delete Course"
+                SemanticProperties.Hint="Delete a course"
+                HorizontalOptions="FillAndExpand"
+                WidthRequest="125"
+                BackgroundColor="Crimson"
+                Clicked="DeleteCourseBtn_Clicked"/>
         </StackLayout>
-    </StackLayout>
+    </Grid>
 </ContentPage>

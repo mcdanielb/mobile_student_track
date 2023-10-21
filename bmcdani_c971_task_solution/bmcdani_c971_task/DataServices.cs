@@ -19,6 +19,9 @@ namespace bmcdani_c971_task
 
             db = new SQLiteAsyncConnection(databasePath);
 
+            await db.DropTableAsync<Term>();
+            await db.DropTableAsync<Course>();
+
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
             // await db.CreateTableAsync<Assessments>();
@@ -26,22 +29,24 @@ namespace bmcdani_c971_task
 
         // Term methods
 
-        public static async Task AddTerm(string name)
+        public static async Task AddTerm(string termName, DateTime termStartDate, DateTime termEndDate)
         {
             await Init();
             var term = new Term
             {
-                Name = name
+                TermName = termName,
+                TermStartDate = termStartDate,
+                TermEndDate = termEndDate
             };
 
             await db.InsertAsync(term);
         }
 
-        public static async Task RemoveTerm(int id)
+        public static async Task RemoveTerm(int termId)
         {
             await Init();
 
-            await db.DeleteAsync<Term>(id);
+            await db.DeleteAsync<Term>(termId);
         }
 
         public static async Task<IEnumerable<Term>> GetTerms()
@@ -54,17 +59,16 @@ namespace bmcdani_c971_task
 
         // Course methods
 
-        public static async Task AddCourse(string name, DateTime startdate, DateTime enddate, string status, string notes, int termid)
+        public static async Task AddCourse(string courseName, DateTime courseStartDate, DateTime courseEndDate, string status, int termId)
         {
             await Init();
             var course = new Course
             {
-                Name = name,
-                StartDate = startdate,
-                EndDate = enddate,
+                CourseName = courseName,
+                CourseStartDate = courseStartDate,
+                CourseEndDate = courseEndDate,
                 Status = status,
-                Notes = notes,
-                TermId = termid
+                TermId = termId
             };
 
             await db.InsertAsync(course);
@@ -74,17 +78,17 @@ namespace bmcdani_c971_task
         {
             await Init();
 
-            await db.DeleteAsync<Course>(id);
+            await db.DeleteAllAsync<Course>();
         }
 
-        public static async Task<IEnumerable<Course>> GetCourses(int? termId = null)
+        public static async Task<IEnumerable<Course>> GetCourses(int? TermId = null)
         {
             await Init();
 
             var courseQuery = db.Table<Course>();
-            if (termId.HasValue)
+            if (TermId.HasValue)
             {
-                courseQuery = courseQuery.Where(c => c.TermId == termId.Value);
+                courseQuery = courseQuery.Where(c => c.TermId == TermId.Value);
             }
 
             var courses = await courseQuery.ToListAsync();

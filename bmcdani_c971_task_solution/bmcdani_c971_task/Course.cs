@@ -12,12 +12,12 @@ namespace bmcdani_c971_task
     {
 
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public int CourseId { get; set; }
+        public string CourseName { get; set; }
+        public DateTime CourseStartDate { get; set; }
+        public DateTime CourseEndDate { get; set; }
         public string Status { get; set; }
-        public string Notes { get; set; }
+        //public string InstructorName {  get; set; }
 
         [ForeignKey("Term")]
         public int TermId { get; set; }
