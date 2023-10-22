@@ -1,11 +1,9 @@
-﻿using Android.Gms.Common.Apis;
-using bmcdani_c971_task.Pages;
+﻿using bmcdani_c971_task.Pages;
 using CommunityToolkit.Maui.Converters;
 using CommunityToolkit.Maui.Markup;
 using Microsoft.Maui.Graphics.Converters;
 using SQLite;
 using System.Drawing;
-using Xamarin.Google.Crypto.Tink.Shaded.Protobuf;
 using Color = Microsoft.Maui.Graphics.Color;
 
 namespace bmcdani_c971_task
