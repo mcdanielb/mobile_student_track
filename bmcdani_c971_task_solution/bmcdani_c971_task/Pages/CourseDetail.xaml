@@ -272,7 +272,7 @@
                             Grid.Column="0"
                             WidthRequest="125"
                             Margin="0,0,0,20"
-                            BackgroundColor="Crimson"
+                            BackgroundColor="RoyalBlue"
                             Command="{Binding AddNoteCommand}"
                             CommandParameter="{Binding Text, Source={x:Reference AddNoteEntry}}" />
 
@@ -281,7 +281,7 @@
                             Grid.Column="1"
                             WidthRequest="125"
                             Margin="0,0,0,20"
-                            BackgroundColor="Crimson"
+                            BackgroundColor="RoyalBlue"
                             Command="{Binding ShareAllNotesCommand}" />
 
                 </Grid>
@@ -310,7 +310,7 @@
                         Grid.Column="0"
                         Text="Edit Course"
                         FontSize="18"
-                        BackgroundColor="#2B0B98"
+                        BackgroundColor="MidnightBlue"
                         SemanticProperties.Hint="Edit Title"
                         VerticalOptions="Center" />
 
@@ -318,7 +318,7 @@
                         Grid.Column="1"
                         Text="Assessments"
                         FontSize="18"
-                        BackgroundColor="Crimson"
+                        BackgroundColor="SeaGreen"
                         SemanticProperties.Hint="Course Assessments"
                         VerticalOptions="Center" />
 

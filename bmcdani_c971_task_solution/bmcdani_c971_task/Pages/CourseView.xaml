@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:bmcdani_c971_task"
              x:Class="bmcdani_c971_task.Pages.CourseView"
              Title="Courses">
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -85,7 +84,7 @@
                      Color="WhiteSmoke"
                      HorizontalOptions="FillAndExpand" />
 
-            <Grid Grid.Row="1" Margin="10,20,10,20" ColumnSpacing="10">
+            <Grid Grid.Row="1" Margin="5,20,5,20" ColumnSpacing="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -96,21 +95,21 @@
                         Grid.Column="0"
                         Text="Edit Term"
                         SemanticProperties.Hint="Edit the current term"
-                        BackgroundColor="#2B0B98"
+                        BackgroundColor="MidnightBlue"
                         Clicked="EditTermBtn_Clicked"/>
 
                 <Button x:Name="AddCourseBtn"
                         Grid.Column="1"
                         Text="Add Course"
                         SemanticProperties.Hint="Add a course"
-                        BackgroundColor="Crimson"
+                        BackgroundColor="RoyalBlue"
                         Clicked="AddCourseBtn_Clicked"/>
 
                 <Button x:Name="DeleteCourseBtn"
                         Grid.Column="2"
                         Text="Delete Course"
                         SemanticProperties.Hint="Delete a course"
-                        BackgroundColor="Crimson"
+                        BackgroundColor="RoyalBlue"
                         Clicked="DeleteCourseBtn_Clicked"/>
 
             </Grid>

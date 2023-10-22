@@ -47,11 +47,27 @@ namespace bmcdani_c971_task
 
             if (isTermDeleteMode)
             {
-                DeleteTermBtn.BackgroundColor = Colors.Gray;
+                DeleteTermBtn.BackgroundColor = Colors.Crimson;
+                DeleteTermBtn.BorderColor = Colors.Black;
+                DeleteTermBtn.BorderWidth = 2;
+
+                AddTermBtn.IsEnabled = false;
+                AddTermBtn.BackgroundColor = Colors.White;
+                AddTermBtn.BorderColor = Colors.Black;
+                AddTermBtn.BorderWidth = 1;
+                AddTermBtn.TextColor = Colors.Black;
+                AddTermBtn.Opacity = .2;
             }
             else
             {
-                DeleteTermBtn.BackgroundColor = Colors.Crimson;
+                DeleteTermBtn.BackgroundColor = Colors.RoyalBlue;
+                DeleteTermBtn.BorderWidth = 0;
+
+                AddTermBtn.IsEnabled = true;
+                AddTermBtn.BackgroundColor = Colors.RoyalBlue;
+                AddTermBtn.BorderWidth = 0;
+                AddTermBtn.TextColor= Colors.White;
+                AddTermBtn.Opacity = 1;
             }
         }
 

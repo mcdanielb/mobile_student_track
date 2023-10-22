@@ -5,7 +5,6 @@ namespace bmcdani_c971_task.Pages;
 public partial class CourseView : ContentPage
 {
     private int selectedTermId;
-    private string selectedTermName;
     private DateTime termStartDate;
     private DateTime termEndDate;
 
@@ -17,13 +16,12 @@ public partial class CourseView : ContentPage
 		InitializeComponent();
 
         TermTitleLbl.Text = termName;
-        selectedTermId = termId;
-        selectedTermName = termName;
+        this.selectedTermId = termId;
         this.termStartDate = termStartDate;
         this.termEndDate = termEndDate;
 
-        TermStartDatePicker.Date = termStartDate;
-        TermEndDatePicker.Date = termEndDate;
+        TermStartDatePicker.Date = this.termStartDate;
+        TermEndDatePicker.Date = this.termEndDate;
 
         UpdateCoursesAsync();
 	}
@@ -55,11 +53,40 @@ public partial class CourseView : ContentPage
 
         if (isCourseDeleteMode)
         {
-            DeleteCourseBtn.BackgroundColor = Colors.Gray;
+            DeleteCourseBtn.BackgroundColor = Colors.Crimson;
+            DeleteCourseBtn.BorderColor = Colors.Black;
+            DeleteCourseBtn.BorderWidth = 2;
+
+            AddCourseBtn.IsEnabled = false;
+            AddCourseBtn.BackgroundColor = Colors.White;
+            AddCourseBtn.BorderColor = Colors.Black;
+            AddCourseBtn.BorderWidth = 1;
+            AddCourseBtn.TextColor = Colors.Black;
+            AddCourseBtn.Opacity = .2;
+
+            EditTermBtn.IsEnabled = false;
+            EditTermBtn.Background = Colors.White;
+            EditTermBtn.BorderColor = Colors.Black;
+            EditTermBtn.BorderWidth = 1;
+            EditTermBtn.TextColor = Colors.Black;
+            EditTermBtn.Opacity = .2;
         }
         else
         {
-            DeleteCourseBtn.BackgroundColor = Colors.Crimson;
+            DeleteCourseBtn.BackgroundColor = Colors.RoyalBlue;
+            DeleteCourseBtn.BorderWidth = 0;
+
+            AddCourseBtn.IsEnabled = true;
+            AddCourseBtn.BackgroundColor = Colors.RoyalBlue;
+            AddCourseBtn.BorderWidth = 0;
+            AddCourseBtn.TextColor = Colors.White;
+            AddCourseBtn.Opacity = 1;
+
+            EditTermBtn.IsEnabled = true;
+            EditTermBtn.Background = Colors.MidnightBlue;
+            EditTermBtn.BorderWidth = 0;
+            EditTermBtn.TextColor = Colors.White;
+            EditTermBtn.Opacity = 1;
         }
     }
 
@@ -114,7 +141,7 @@ public partial class CourseView : ContentPage
         if (buttonClicked) return;
         buttonClicked = true;
 
-        await Navigation.PushAsync(new AddCoursePage(selectedTermId, selectedTermName));
+        await Navigation.PushAsync(new AddCoursePage(selectedTermId, TermTitleLbl.Text));
     }
 
     private async void EditTermBtn_Clicked(object sender, EventArgs e)
