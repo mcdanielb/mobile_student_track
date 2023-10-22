@@ -6,22 +6,22 @@ public partial class AddTermPage : ContentPage
 	{
 		InitializeComponent();
 
-		AddTermStartDatePicker.DateSelected += (s, e) =>
+		AddTermStartDatePicker.DateSelected += async (s, e) =>
 		{
-			AddTermEndDatePicker.MinimumDate = AddTermStartDatePicker.Date;
 			if (AddTermStartDatePicker.Date > AddTermEndDatePicker.Date)
 			{
-				AddTermEndDatePicker.Date = AddTermStartDatePicker.Date;
+                await DisplayAlert("Error", "Start date cannot be greater than end date.", "Ok");
+                AddTermStartDatePicker.Date = e.OldDate;
 			}
 		};
 
-		AddTermEndDatePicker.DateSelected += (s, e) =>
+		AddTermEndDatePicker.DateSelected += async (s, e) =>
 		{
-			AddTermStartDatePicker.MaximumDate = AddTermEndDatePicker.Date;
-			if (AddTermEndDatePicker.Date > AddTermStartDatePicker.Date)
+			if (AddTermEndDatePicker.Date < AddTermStartDatePicker.Date)
 			{
-				AddTermStartDatePicker.Date = AddTermEndDatePicker.Date;
-			}
+                await DisplayAlert("Error", "End date cannot be earlier than start date.", "Ok");
+                AddTermEndDatePicker.Date = e.OldDate;
+            }
 		};
 	}
 

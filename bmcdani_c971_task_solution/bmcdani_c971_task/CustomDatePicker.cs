@@ -15,12 +15,12 @@ public class CustomDatePicker : DatePicker
     {
         if (this.Date > this.MaximumDate)
         {
-            await App.Current.MainPage.DisplayAlert("Error", "Start date cannot be greater than end date.", "Ok");
+            await Application.Current.MainPage.DisplayAlert("Error", "Start date cannot be greater than end date.", "Ok");
             this.Date = e.OldDate;
         }
         else if (this.Date < this.MinimumDate)
         {
-            await App.Current.MainPage.DisplayAlert("Error", "End date cannot be earlier than start date.", "Ok");
+            await Application.Current.MainPage.DisplayAlert("Error", "End date cannot be earlier than start date.", "Ok");
             this.Date = e.OldDate;
         }
     }
