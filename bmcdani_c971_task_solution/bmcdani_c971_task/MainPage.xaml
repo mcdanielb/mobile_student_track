@@ -9,61 +9,81 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <VerticalStackLayout Grid.Row="0"
-            Spacing="10"
-            Padding="30,0"
-            VerticalOptions="Start"
-            HorizontalOptions="CenterAndExpand">
 
-            <Image
-                Source="wgu_logo.png"
-                SemanticProperties.Description="The WGU logo and header"
-                HeightRequest="150"
-                HorizontalOptions="Fill" />
+        <Grid Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Label
-                Text="Welcome! Please choose a term to view its courses."
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome the WGU student academic term tracker"
-                FontSize="18"
-                HorizontalTextAlignment="Center"
-                Margin="25"/>
+                <Image  Source="wgu_logo.png"
+                        Grid.Row="0"
+                        SemanticProperties.Description="The WGU logo and header"
+                        HeightRequest="150"
+                        HorizontalOptions="Fill" />
 
-        </VerticalStackLayout>
+                <Label Text="Welcome! Please choose a term to view its courses."
+                       Grid.Row="1"
+                       SemanticProperties.HeadingLevel="Level2"
+                       SemanticProperties.Description="Welcome the WGU student academic term tracker"
+                       FontSize="18"
+                       Margin="60,0,60,15"
+                       HorizontalTextAlignment="Center"/>
+
+                <BoxView Grid.Row="2"
+                         HeightRequest="2"
+                         Color="WhiteSmoke"
+                         HorizontalOptions="FillAndExpand"
+                         Margin="0,0,0,15"/>
+
+            </Grid>
+
+
+        </Grid>
         
         <ScrollView Grid.Row="1">
-            <StackLayout
-                x:Name="termsStackLayout">
-                
-            </StackLayout>
+            <StackLayout x:Name="termsStackLayout"/>
         </ScrollView>
 
-        <StackLayout Grid.Row="2"
-                     Orientation="Horizontal"
-                     HorizontalOptions="FillAndExpand"
-                     Spacing="-100">
-            
-            <Button
-                x:Name="AddTermBtn"
-                Margin="30"
-                Text="Add Term"
-                SemanticProperties.Hint="Add a term"
-                HorizontalOptions="FillAndExpand"
-                WidthRequest="125"
-                BackgroundColor="Crimson"
-                Clicked="AddTermBtn_Clicked" />
+        <Grid Grid.Row="2" BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <Button
-                x:Name="DeleteTermBtn"
-                Margin="0,30"
-                Text="Delete Term"
-                HorizontalOptions="FillAndExpand"
-                WidthRequest="125"
-                BackgroundColor="Crimson"
-                Clicked="DeleteTermBtn_Clicked" />
-                
-        </StackLayout>
+            <BoxView Grid.Row="0"
+                     HeightRequest="2"
+                     Color="WhiteSmoke"
+                     HorizontalOptions="FillAndExpand" />
+
+            <Grid Grid.Row="1" Margin="20" ColumnSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="AddTermBtn"
+                        Grid.Column="0"
+                        Text="Add Term"
+                        FontSize="18"
+                        BackgroundColor="Crimson"
+                        SemanticProperties.Hint="Add a term"
+                        VerticalOptions="Center"
+                        Clicked="AddTermBtn_Clicked" />
+
+                <Button x:Name="DeleteTermBtn"
+                        Grid.Column="1"
+                        Text="Delete Term"
+                        FontSize="18"
+                        BackgroundColor="Crimson"
+                        SemanticProperties.Hint="Add a term"
+                        VerticalOptions="Center"
+                        Clicked="DeleteTermBtn_Clicked" />
+
+            </Grid>
+        </Grid>
 
     </Grid>
 

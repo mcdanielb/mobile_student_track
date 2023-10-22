@@ -49,9 +49,35 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        
-        
-        
+
+        <Label Text="Enter Instructor Name"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Entry x:Name="AddCourseInstructorNameEntry"
+               Placeholder="Course Instructor Name"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+        <Label Text="Enter Instructor Phone"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Entry x:Name="AddCourseInstructorPhoneEntry"
+               Placeholder="Course Instructor Phone"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+        <Label Text="Enter Instructor Email"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Entry x:Name="AddCourseInstructorEmailEntry"
+               Placeholder="Course Instructor Email"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+
         <Button
             Text="Add Course"
             Clicked="OnAddCourse_Clicked"/>

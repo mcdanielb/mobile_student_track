@@ -12,24 +12,32 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <VerticalStackLayout Grid.Row="0"
-                             Spacing="10"
-                             Padding="30,0"
-                             VerticalOptions="Center"
-                             HorizontalOptions="CenterAndExpand">
 
-            <Label x:Name="TermTitleLbl"
-                   Text="Term Title"
-                   FontSize="24"
-                   Margin="25"
-                   SemanticProperties.Hint="Term Title"
-                   VerticalOptions="Start" 
-                   HorizontalOptions="Center" />
+        <Grid Grid.Row="0" BackgroundColor="AliceBlue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        </VerticalStackLayout>
+                <Label x:Name="TermTitleLbl"
+                       Grid.Row="0"
+                       Text="Term Title"
+                       FontSize="24"
+                       Margin="15"
+                       SemanticProperties.Hint="Term Title"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="Center" />
 
-        <Grid Grid.Row="1">
+                <BoxView Grid.Row="1"
+                         HeightRequest="2"
+                         Color="WhiteSmoke"
+                         HorizontalOptions="FillAndExpand" />
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,15,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -63,44 +71,49 @@
         </Grid>
 
         <ScrollView Grid.Row="2">
-            <VerticalStackLayout x:Name="coursesStackLayout"
-                                 Margin="30">
-                
-            </VerticalStackLayout>
+            <VerticalStackLayout x:Name="coursesStackLayout" Margin="30"/>
         </ScrollView>
 
-        <StackLayout Grid.Row="3"
-                     Orientation="Horizontal"
-                     HorizontalOptions="Center"
-                     VerticalOptions="FillAndExpand"
-                     Spacing="-10">
+        <Grid Grid.Row="3" BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-            <Button x:Name="EditTermBtn"
-                    Margin="30"
-                    Text="Edit Term"
-                    SemanticProperties.Hint="Edit the current term"
-                    HorizontalOptions="FillAndExpand"
-                    WidthRequest="120"
-                    BackgroundColor="#2B0B98"
-                    Clicked="EditTermBtn_Clicked"/>
+            <BoxView Grid.Row="0"
+                     HeightRequest="2"
+                     Color="WhiteSmoke"
+                     HorizontalOptions="FillAndExpand" />
 
-            <Button x:Name="AddCourseBtn"
-                    Margin="30"
-                    Text="Add Course"
-                    SemanticProperties.Hint="Add a course"
-                    HorizontalOptions="FillAndExpand"
-                    WidthRequest="120"
-                    BackgroundColor="Crimson"
-                    Clicked="AddCourseBtn_Clicked"/>
+            <Grid Grid.Row="1" Margin="10,20,10,20" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <Button x:Name="DeleteCourseBtn"
-                    Margin="30"
-                    Text="Delete Course"
-                    SemanticProperties.Hint="Delete a course"
-                    HorizontalOptions="FillAndExpand"
-                    WidthRequest="120"
-                    BackgroundColor="Crimson"
-                    Clicked="DeleteCourseBtn_Clicked"/>
-        </StackLayout>
+                <Button x:Name="EditTermBtn"
+                        Grid.Column="0"
+                        Text="Edit Term"
+                        SemanticProperties.Hint="Edit the current term"
+                        BackgroundColor="#2B0B98"
+                        Clicked="EditTermBtn_Clicked"/>
+
+                <Button x:Name="AddCourseBtn"
+                        Grid.Column="1"
+                        Text="Add Course"
+                        SemanticProperties.Hint="Add a course"
+                        BackgroundColor="Crimson"
+                        Clicked="AddCourseBtn_Clicked"/>
+
+                <Button x:Name="DeleteCourseBtn"
+                        Grid.Column="2"
+                        Text="Delete Course"
+                        SemanticProperties.Hint="Delete a course"
+                        BackgroundColor="Crimson"
+                        Clicked="DeleteCourseBtn_Clicked"/>
+
+            </Grid>
+        </Grid>
     </Grid>
 </ContentPage>
