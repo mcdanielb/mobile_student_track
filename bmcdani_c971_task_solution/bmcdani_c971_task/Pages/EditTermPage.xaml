@@ -9,6 +9,8 @@
                  Padding="20">
 
         <Entry x:Name="EditTermNameEntry"
+               MinimumWidthRequest="80"
+               HorizontalTextAlignment="Center"
                HorizontalOptions="Center"
                Margin="20"/>
 
@@ -27,6 +29,7 @@
                                 Margin="0,0,0,20"/>
 
         <Button Text="Save Changes"
+                WidthRequest="125"
                 Clicked="OnSaveChanges_Clicked"/>
         
     </StackLayout>

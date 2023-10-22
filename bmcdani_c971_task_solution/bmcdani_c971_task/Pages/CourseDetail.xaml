@@ -129,6 +129,7 @@
                     <Entry x:Name="InstructorNameEntry"
                            Grid.Row="0"
                            Grid.Column="1"
+                           MaxLength="50"
                            Placeholder="Name"
                            IsEnabled="False"
                            PlaceholderColor="Black"/>
@@ -142,6 +143,7 @@
                     <Entry x:Name="InstructorPhoneEntry"
                            Grid.Row="1"
                            Grid.Column="1"
+                           MaxLength="20"
                            Placeholder="Phone Number"
                            IsEnabled="False"
                            PlaceholderColor="Black"/>
@@ -155,6 +157,7 @@
                     <Entry x:Name="InstructorEmailEntry"
                            Grid.Row="2"
                            Grid.Column="1"
+                           MaxLength="50"
                            Placeholder="Email Address"
                            IsEnabled="False"
                            PlaceholderColor="Black"
@@ -252,6 +255,7 @@
 
                 <Entry x:Name="AddNoteEntry"
                        Grid.ColumnSpan="2"
+                       MaxLength="1000"
                        Placeholder="Add a new note..."
                        VerticalOptions="Start"
                        HorizontalOptions="FillAndExpand"

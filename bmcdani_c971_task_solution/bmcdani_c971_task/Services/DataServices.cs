@@ -26,6 +26,7 @@ namespace bmcdani_c971_task
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
             await db.CreateTableAsync<Assessments>();
+            await db.CreateTableAsync<NotesList>();
         }
 
         // Term Methods

@@ -10,7 +10,7 @@ public partial class EditTermPage : ContentPage
 
 		this.termId = termId;
 
-		EditTermNameEntry.Placeholder = termName;
+		EditTermNameEntry.Text = termName;
 		EditTermStartDatePicker.Date = startDate;
 		EditTermEndDatePicker.Date = endDate;
 	}
