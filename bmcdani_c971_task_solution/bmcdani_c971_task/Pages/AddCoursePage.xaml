@@ -13,8 +13,9 @@
                HorizontalOptions="Center"/>
         
         <Entry x:Name="AddCourseNameEntry"
-               MaxLength="25"
+               MaxLength="50"
                Placeholder="Course Name"
+               HorizontalTextAlignment="Center"
                HorizontalOptions="Center"
                Margin="0,0,0,20"/>
 
@@ -41,12 +42,14 @@
         <Picker x:Name="AddStatusPicker"
                 Title="Select Status"
                 HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
                 Margin="0,0,0,20">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Planned</x:String>
                     <x:String>In Progress</x:String>
                     <x:String>Completed</x:String>
+                    <x:String>Dropped</x:String>
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
@@ -58,6 +61,7 @@
         <Entry x:Name="AddCourseInstructorNameEntry"
                MaxLength="50"
                Placeholder="Course Instructor Name"
+               HorizontalTextAlignment="Center"
                HorizontalOptions="Center"
                Margin="0,0,0,20"/>
 
@@ -68,6 +72,7 @@
         <Entry x:Name="AddCourseInstructorPhoneEntry"
                MaxLength="20"
                Placeholder="Course Instructor Phone"
+               HorizontalTextAlignment="Center"
                HorizontalOptions="Center"
                Margin="0,0,0,20"/>
 
@@ -78,6 +83,7 @@
         <Entry x:Name="AddCourseInstructorEmailEntry"
                MaxLength="50"
                Placeholder="Course Instructor Email"
+               HorizontalTextAlignment="Center"
                HorizontalOptions="Center"
                Margin="0,0,0,20"/>
 

@@ -12,35 +12,56 @@ public partial class AddCoursePage : ContentPage
 		this.termId = termId;
 		this.termName = termName;
 
-        AddCourseStartDatePicker.DateSelected += (s, e) =>
+        AddCourseStartDatePicker.DateSelected += async (s, e) =>
         {
-            AddCourseEndDatePicker.MinimumDate = AddCourseStartDatePicker.Date;
             if (AddCourseStartDatePicker.Date > AddCourseEndDatePicker.Date)
             {
-                AddCourseEndDatePicker.Date = AddCourseStartDatePicker.Date;
+                await DisplayAlert("Error", "Start date cannot be greater than end date.", "Ok");
+                AddCourseStartDatePicker.Date = e.OldDate;
             }
         };
 
-        AddCourseEndDatePicker.DateSelected += (s, e) =>
+        AddCourseEndDatePicker.DateSelected += async (s, e) =>
         {
-            AddCourseStartDatePicker.MaximumDate = AddCourseEndDatePicker.Date;
-            if (AddCourseEndDatePicker.Date > AddCourseStartDatePicker.Date)
+            if (AddCourseEndDatePicker.Date < AddCourseStartDatePicker.Date)
             {
-                AddCourseStartDatePicker.Date = AddCourseEndDatePicker.Date;
+                await DisplayAlert("Error", "End date cannot be earlier than start date.", "Ok");
+                AddCourseEndDatePicker.Date = e.OldDate;
             }
         };
     }
 
 	private async void OnAddCourse_Clicked(object sender, EventArgs e)
 	{
-		if (!string.IsNullOrEmpty(AddCourseNameEntry.Text))
+		if (string.IsNullOrEmpty(AddCourseNameEntry.Text) ||
+            string.IsNullOrEmpty(AddCourseInstructorNameEntry.Text) ||
+            string.IsNullOrEmpty(AddCourseInstructorPhoneEntry.Text) ||
+            string.IsNullOrEmpty(AddCourseInstructorEmailEntry.Text) ||
+            AddStatusPicker.SelectedItem == null)
 		{
-            await DataServices.AddCourse(AddCourseNameEntry.Text, AddCourseStartDatePicker.Date, AddCourseEndDatePicker.Date, AddStatusPicker.SelectedItem.ToString(), AddCourseInstructorNameEntry.Text, AddCourseInstructorPhoneEntry.Text, AddCourseInstructorEmailEntry.Text, termId);
-			await Navigation.PopAsync();
+            await DisplayAlert("Error", "Please enter all fields.", "Ok");
+            return;
         }
-		else
-		{
-			await DisplayAlert("Error", "Please enter a valid course name.", "Ok");
-		}
-	}
+		if (!IsValidEmail(AddCourseInstructorEmailEntry.Text))
+        {
+            await DisplayAlert("Error", "Please enter a valid email address.", "Ok");
+            return;
+        }
+
+        await DataServices.AddCourse(AddCourseNameEntry.Text, AddCourseStartDatePicker.Date, AddCourseEndDatePicker.Date, AddStatusPicker.SelectedItem.ToString(), AddCourseInstructorNameEntry.Text, AddCourseInstructorPhoneEntry.Text, AddCourseInstructorEmailEntry.Text, termId);
+        await Navigation.PopAsync();
+    }
+
+    private bool IsValidEmail(string email)
+    {
+        try
+        {
+            var mail = new System.Net.Mail.MailAddress(email);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }

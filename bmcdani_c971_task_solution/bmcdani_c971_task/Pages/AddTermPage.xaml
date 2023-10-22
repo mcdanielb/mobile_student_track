@@ -10,8 +10,9 @@
         
         <Entry
             x:Name="AddTermNameEntry"
-            MaxLength="25"
-            Placeholder="Enter Term Name" 
+            MaxLength="50"
+            Placeholder="Enter Term Name"
+            HorizontalTextAlignment="Center"
             HorizontalOptions="Center"
             Margin="20"/>
         
