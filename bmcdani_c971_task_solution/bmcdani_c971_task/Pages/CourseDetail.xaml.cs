@@ -3,7 +3,7 @@ namespace bmcdani_c971_task.Pages;
 public partial class CourseDetail : ContentPage
 {
 	private Course currentCourse;
-	private bool isEditCourseButtonClicked = false;
+	private bool isButtonClicked = false;
 
 	public CourseDetail(Course course)
 	{
@@ -32,7 +32,7 @@ public partial class CourseDetail : ContentPage
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
-		isEditCourseButtonClicked = false;
+		isButtonClicked = false;
 
 		currentCourse = await DataServices.GetCourseById(currentCourse.CourseId);
 		PopulateUICourseData();
@@ -40,8 +40,8 @@ public partial class CourseDetail : ContentPage
 
 	private async void EditCourseButton_Clicked(object sender, EventArgs e)
 	{
-		if (isEditCourseButtonClicked) return;
-		isEditCourseButtonClicked = true;
+		if (isButtonClicked) return;
+		isButtonClicked = true;
 
 		await Navigation.PushAsync(new EditCoursePage(currentCourse.CourseId,
 													  CourseTitleLbl.Text,
@@ -54,5 +54,13 @@ public partial class CourseDetail : ContentPage
 													  CourseNotifyStartCb.IsChecked,
 													  CourseNotifyEndCb.IsChecked,
 													  currentCourse.TermId));
+	}
+
+	private async void AssessmentsButton_Clicked(object sender, EventArgs e)
+	{
+		if (isButtonClicked) return;
+		isButtonClicked = true;
+
+		await Navigation.PushAsync(new AssessmentView(currentCourse.CourseId, currentCourse.CourseName));
 	}
 }

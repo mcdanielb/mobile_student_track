@@ -26,7 +26,7 @@ namespace bmcdani_c971_task
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
             await db.CreateTableAsync<NotesList>();
-            await db.CreateTableAsync<Assessments>();
+            await db.CreateTableAsync<Assessment>();
         }
 
         // Term Methods
@@ -172,6 +172,23 @@ namespace bmcdani_c971_task
 
                 await db.UpdateAsync(courseToUpdate);
             }
+        }
+
+        // Assessment methods
+
+        public static async Task<IEnumerable<Assessment>> GetAssessments(int CourseId)
+        {
+            await Init();
+
+            var assessment = await db.Table<Assessment>().Where(a => a.CourseId == CourseId).ToListAsync();
+            return assessment;
+        }
+
+        public static async Task RemoveAssessment(int courseId)
+        {
+            await Init();
+
+            await db.DeleteAsync<Assessment>(courseId);
         }
     }
 }

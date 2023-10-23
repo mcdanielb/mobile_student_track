@@ -332,7 +332,8 @@
                         FontSize="18"
                         BackgroundColor="SeaGreen"
                         SemanticProperties.Hint="Course Assessments"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"
+                        Clicked="AssessmentsButton_Clicked"/>
 
             </Grid>
         </Grid>
