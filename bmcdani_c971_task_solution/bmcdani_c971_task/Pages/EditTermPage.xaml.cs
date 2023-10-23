@@ -13,9 +13,27 @@ public partial class EditTermPage : ContentPage
 		EditTermNameEntry.Text = termName;
 		EditTermStartDatePicker.Date = startDate;
 		EditTermEndDatePicker.Date = endDate;
-	}
 
-	private async void OnSaveChanges_Clicked(object sender, EventArgs e)
+        EditTermStartDatePicker.DateSelected += async (s, e) =>
+        {
+            if (EditTermStartDatePicker.Date > EditTermEndDatePicker.Date)
+            {
+                await DisplayAlert("Error", "Start date cannot be later than end date.", "Ok");
+                EditTermEndDatePicker.Date = EditTermStartDatePicker.Date;
+            }
+        };
+
+        EditTermEndDatePicker.DateSelected += async (s, e) =>
+        {
+            if (EditTermEndDatePicker.Date < EditTermStartDatePicker.Date)
+            {
+                await DisplayAlert("Error", "End date cannot be earlier than start date.", "Ok");
+                EditTermEndDatePicker.Date = e.OldDate;
+            }
+        };
+    }
+
+	private async void OnSaveTermChanges_Clicked(object sender, EventArgs e)
 	{
         if (!string.IsNullOrEmpty(EditTermNameEntry.Text))
         {

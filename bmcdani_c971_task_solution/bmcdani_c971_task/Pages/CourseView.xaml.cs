@@ -15,11 +15,11 @@ public partial class CourseView : ContentPage
 	{
 		InitializeComponent();
 
-        TermTitleLbl.Text = termName;
         this.selectedTermId = termId;
         this.termStartDate = termStartDate;
         this.termEndDate = termEndDate;
 
+        TermTitleLbl.Text = termName;
         TermStartDatePicker.Date = this.termStartDate;
         TermEndDatePicker.Date = this.termEndDate;
 
@@ -115,7 +115,7 @@ public partial class CourseView : ContentPage
             Course selectedCourse = (await DataServices.GetCourses()).FirstOrDefault(c => c.CourseId == selectedCourseId);
             if (selectedCourse != null)
             {
-                await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.CourseName));
+                await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.CourseName, selectedCourse.CourseStartDate, selectedCourse.CourseEndDate, selectedCourse.CourseStatus, selectedCourse.InstructorName, selectedCourse.InstructorPhone, selectedCourse.InstructorEmail, selectedCourse.CourseNotifyOnStartDate, selectedCourse.CourseNotifyOnEndDate));
             }
         }
     }

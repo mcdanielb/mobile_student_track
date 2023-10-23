@@ -18,7 +18,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Label x:Name="CoureTitleLbl"
+                <Label x:Name="CourseTitleLbl"
                        Grid.Row="0"
                        Text="Course Title" 
                        FontSize="24"
@@ -82,12 +82,14 @@
                            HorizontalOptions="CenterAndExpand"
                            VerticalOptions="CenterAndExpand"/>
 
-                    <Picker x:Name="StatusPicker"
+                    <Picker x:Name="CourseStatusPicker"
                             Grid.Row="2"
                             Grid.Column="1"
                             IsEnabled="False"
                             Title="Select Status"
                             TitleColor="Black"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="CenterAndExpand">
                         <Picker.ItemsSource>
@@ -95,6 +97,7 @@
                                 <x:String>Planned</x:String>
                                 <x:String>In Progress</x:String>
                                 <x:String>Completed</x:String>
+                                <x:String>Dropped</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                     </Picker>
@@ -130,6 +133,8 @@
                            Grid.Row="0"
                            Grid.Column="1"
                            MaxLength="50"
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
                            Placeholder="Name"
                            IsEnabled="False"
                            PlaceholderColor="Black"/>
@@ -144,6 +149,8 @@
                            Grid.Row="1"
                            Grid.Column="1"
                            MaxLength="20"
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
                            Placeholder="Phone Number"
                            IsEnabled="False"
                            PlaceholderColor="Black"/>
@@ -158,6 +165,8 @@
                            Grid.Row="2"
                            Grid.Column="1"
                            MaxLength="50"
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
                            Placeholder="Email Address"
                            IsEnabled="False"
                            PlaceholderColor="Black"
@@ -188,9 +197,10 @@
                            HorizontalTextAlignment="Center"
                            VerticalTextAlignment="Center"/>
 
-                    <CheckBox x:Name="CourseStartCb"
+                    <CheckBox x:Name="CourseNotifyStartCb"
                               Grid.Row="0"
-                              Grid.Column="1"/>
+                              Grid.Column="1"
+                              IsEnabled="False"/>
                     
                     <Label Text="Course End:"
                            Grid.Row="1"
@@ -199,9 +209,10 @@
                            VerticalTextAlignment="Center"
                            Margin="0,0,0,10"/>
 
-                    <CheckBox x:Name="CourseEndCb"
+                    <CheckBox x:Name="CourseNotifyEndCb"
                               Grid.Row="1"
                               Grid.Column="1"
+                              IsEnabled="False"
                               Margin="0,0,0,10"/>
                 </Grid>
 
@@ -232,9 +243,9 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Label Text="{Binding NoteContent}"
+                                       Grid.Column="0"
                                        HorizontalOptions="Start"
-                                       VerticalOptions="Center"
-                                       Grid.Column="0"/>
+                                       VerticalOptions="Center"/>
 
                                 <Button Text="Edit"
                                         Grid.Column="1"
@@ -259,7 +270,7 @@
                        Placeholder="Add a new note..."
                        VerticalOptions="Start"
                        HorizontalOptions="FillAndExpand"
-                       Margin="10"/>
+                       Margin="0,0,0,10"/>
 
                 <Grid ColumnSpacing="-30">
                     <Grid.ColumnDefinitions>
@@ -306,13 +317,14 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="EditCourseDetailsButton"
+                <Button x:Name="EditCourseButton"
                         Grid.Column="0"
                         Text="Edit Course"
                         FontSize="18"
                         BackgroundColor="MidnightBlue"
                         SemanticProperties.Hint="Edit Title"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center"
+                        Clicked="EditCourseButton_Clicked"/>
 
                 <Button x:Name="AssessmentsButton"
                         Grid.Column="1"

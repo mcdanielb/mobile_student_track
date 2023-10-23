@@ -16,8 +16,8 @@ public partial class AddCoursePage : ContentPage
         {
             if (AddCourseStartDatePicker.Date > AddCourseEndDatePicker.Date)
             {
-                await DisplayAlert("Error", "Start date cannot be greater than end date.", "Ok");
-                AddCourseStartDatePicker.Date = e.OldDate;
+                await DisplayAlert("Error", "Start date cannot be later than end date.", "Ok");
+                AddCourseEndDatePicker.Date = AddCourseStartDatePicker.Date;
             }
         };
 
@@ -48,7 +48,16 @@ public partial class AddCoursePage : ContentPage
             return;
         }
 
-        await DataServices.AddCourse(AddCourseNameEntry.Text, AddCourseStartDatePicker.Date, AddCourseEndDatePicker.Date, AddStatusPicker.SelectedItem.ToString(), AddCourseInstructorNameEntry.Text, AddCourseInstructorPhoneEntry.Text, AddCourseInstructorEmailEntry.Text, termId);
+        await DataServices.AddCourse(AddCourseNameEntry.Text,
+                                     AddCourseStartDatePicker.Date,
+                                     AddCourseEndDatePicker.Date,
+                                     AddStatusPicker.SelectedItem.ToString(),
+                                     AddCourseInstructorNameEntry.Text,
+                                     AddCourseInstructorPhoneEntry.Text,
+                                     AddCourseInstructorEmailEntry.Text,
+                                     AddCourseNotifyStartCb.IsChecked,
+                                     AddCourseNotifyEndCb.IsChecked,
+                                     termId);
         await Navigation.PopAsync();
     }
 

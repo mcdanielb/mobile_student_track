@@ -10,8 +10,8 @@ public partial class AddTermPage : ContentPage
 		{
 			if (AddTermStartDatePicker.Date > AddTermEndDatePicker.Date)
 			{
-                await DisplayAlert("Error", "Start date cannot be greater than end date.", "Ok");
-                AddTermStartDatePicker.Date = e.OldDate;
+                await DisplayAlert("Error", "Start date cannot be later than end date.", "Ok");
+                AddTermEndDatePicker.Date = AddTermStartDatePicker.Date;
 			}
 		};
 

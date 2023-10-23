@@ -2,7 +2,7 @@
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
 using SQLite;
-
+using Plugin.LocalNotification;
 
 namespace bmcdani_c971_task
 {
@@ -15,6 +15,7 @@ namespace bmcdani_c971_task
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
                 .UseMauiCommunityToolkitMarkup()
+                .UseLocalNotification()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

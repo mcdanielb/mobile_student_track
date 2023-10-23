@@ -4,93 +4,108 @@
              xmlns:local="clr-namespace:bmcdani_c971_task"
              x:Class="bmcdani_c971_task.Pages.AddCoursePage"
              Title="Add Course">
-    <StackLayout VerticalOptions="Start"
-                 HorizontalOptions="CenterAndExpand"
-                 Padding="20">
-        
-        <Label Text="Enter Course Name"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
-        
-        <Entry x:Name="AddCourseNameEntry"
-               MaxLength="50"
-               Placeholder="Course Name"
-               HorizontalTextAlignment="Center"
-               HorizontalOptions="Center"
-               Margin="0,0,0,20"/>
+    <ScrollView VerticalOptions="Start"
+                HorizontalOptions="CenterAndExpand"
+                Padding="20">
 
-        <Label Text="Select Course Start Date"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+        <StackLayout>
+            <Label Text="Enter Course Name"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-        <local:CustomDatePicker x:Name="AddCourseStartDatePicker"
-                                HorizontalOptions="Center"
-                                Margin="0,0,0,20"/>
+            <Entry x:Name="AddCourseNameEntry"
+                   MaxLength="50"
+                   Placeholder="Course Name"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
 
-        <Label Text="Select Course End Date"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+            <Label Text="Select Course Start Date"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-        <local:CustomDatePicker x:Name="AddCourseEndDatePicker"
-                                HorizontalOptions="Center"
-                                Margin="0,0,0,20"/>
+            <local:CustomDatePicker x:Name="AddCourseStartDatePicker"
+                                    HorizontalOptions="Center"
+                                    Margin="0,0,0,20"/>
 
-        <Label Text="Select Course Status"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
-        
-        <Picker x:Name="AddStatusPicker"
-                Title="Select Status"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"
-                Margin="0,0,0,20">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Planned</x:String>
-                    <x:String>In Progress</x:String>
-                    <x:String>Completed</x:String>
-                    <x:String>Dropped</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+            <Label Text="Select Course End Date"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-        <Label Text="Enter Instructor Name"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+            <local:CustomDatePicker x:Name="AddCourseEndDatePicker"
+                                    HorizontalOptions="Center"
+                                    Margin="0,0,0,20"/>
 
-        <Entry x:Name="AddCourseInstructorNameEntry"
-               MaxLength="50"
-               Placeholder="Course Instructor Name"
-               HorizontalTextAlignment="Center"
-               HorizontalOptions="Center"
-               Margin="0,0,0,20"/>
+            <Label Text="Select Course Status"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-        <Label Text="Enter Instructor Phone"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+            <Picker x:Name="AddStatusPicker"
+                    Title="Select Status"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,0,0,20">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Planned</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
 
-        <Entry x:Name="AddCourseInstructorPhoneEntry"
-               MaxLength="20"
-               Placeholder="Course Instructor Phone"
-               HorizontalTextAlignment="Center"
-               HorizontalOptions="Center"
-               Margin="0,0,0,20"/>
+            <Label Text="Enter Instructor Name"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-        <Label Text="Enter Instructor Email"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+            <Entry x:Name="AddCourseInstructorNameEntry"
+                   MaxLength="50"
+                   Placeholder="Course Instructor Name"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
 
-        <Entry x:Name="AddCourseInstructorEmailEntry"
-               MaxLength="50"
-               Placeholder="Course Instructor Email"
-               HorizontalTextAlignment="Center"
-               HorizontalOptions="Center"
-               Margin="0,0,0,20"/>
+            <Label Text="Enter Instructor Phone"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
+            <Entry x:Name="AddCourseInstructorPhoneEntry"
+                   MaxLength="20"
+                   Placeholder="Course Instructor Phone"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
 
-        <Button
-            Text="Add Course"
-            Clicked="OnAddCourse_Clicked"/>
+            <Label Text="Enter Instructor Email"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
 
-    </StackLayout>
+            <Entry x:Name="AddCourseInstructorEmailEntry"
+                   MaxLength="50"
+                   Placeholder="Course Instructor Email"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+
+            <Label Text="Nofity Course Start:"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+
+            <CheckBox x:Name="AddCourseNotifyStartCb"/>
+
+            <Label Text="Notify Course End:"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Margin="0,0,0,10"/>
+
+            <CheckBox x:Name="AddCourseNotifyEndCb"
+                      Margin="0,0,0,10"/>
+
+            <Button Text="Add Course"
+                    HorizontalOptions="Center"
+                    WidthRequest="150"
+                    Clicked="OnAddCourse_Clicked"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
