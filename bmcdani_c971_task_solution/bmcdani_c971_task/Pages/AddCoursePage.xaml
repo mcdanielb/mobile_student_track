@@ -88,24 +88,43 @@
                    HorizontalOptions="Center"
                    Margin="0,0,0,20"/>
 
-            <Label Text="Nofity Course Start:"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"/>
+            <Grid VerticalOptions="Center" HorizontalOptions="Center" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Nofity Course Start"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="0"/>
 
-            <CheckBox x:Name="AddCourseNotifyStartCb"/>
+                <CheckBox x:Name="AddCourseNotifyStartCb"
+                          Grid.Row="1"
+                          Grid.Column="0"/>
 
-            <Label Text="Notify Course End:"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Margin="0,0,0,10"/>
+                <Label Text="Notify Course End"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="1"/>
 
-            <CheckBox x:Name="AddCourseNotifyEndCb"
-                      Margin="0,0,0,10"/>
+                <CheckBox x:Name="AddCourseNotifyEndCb"
+                          Grid.Row="1"
+                          Grid.Column="1"/>
+
+                
+            </Grid>
 
             <Button Text="Add Course"
+                    Margin="10"
                     HorizontalOptions="Center"
                     WidthRequest="150"
                     Clicked="OnAddCourse_Clicked"/>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

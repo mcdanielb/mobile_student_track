@@ -2,53 +2,31 @@ namespace bmcdani_c971_task.Pages;
 
 public partial class CourseDetail : ContentPage
 {
-	private int selectedCourseId;
-	private DateTime courseStartDate;
-	private DateTime courseEndDate;
-	private string courseStatus;
-	private string instructorName;
-	private string instructorPhone;
-	private string instructorEmail;
-	private bool courseNotifyOnStartDate;
-	private bool courseNotifyOnEndDate;
-	private int termId;
-
+	private Course currentCourse;
 	private bool isEditCourseButtonClicked = false;
 
-	public CourseDetail(int courseId,
-						string courseName,
-						DateTime courseStartDate,
-						DateTime courseEndDate,
-						string courseStatus,
-						string instructorName,
-						string instructorPhone,
-						string instructorEmail,
-						bool courseNotifyOnStartDate,
-						bool courseNotifyOnEndDate,
-						int termId)
+	public CourseDetail(Course course)
 	{
 		InitializeComponent();
 
-		this.selectedCourseId = courseId;
-		this.courseStartDate = courseStartDate;
-		this.courseEndDate = courseEndDate;
-		this.courseStatus = courseStatus;
-		this.instructorName = instructorName;
-		this.instructorPhone = instructorPhone;
-		this.instructorEmail = instructorEmail;
-		this.courseNotifyOnStartDate = courseNotifyOnStartDate;
-		this.courseNotifyOnEndDate = courseNotifyOnEndDate;
-		this.termId = termId;
+		this.currentCourse = course;
 
-		CourseTitleLbl.Text = courseName;
-		CourseStartDatePicker.Date = this.courseStartDate;
-		CourseEndDatePicker.Date = this.courseEndDate;
-		CourseStatusPicker.SelectedItem = this.courseStatus;
-		InstructorNameEntry.Text = this.instructorName;
-		InstructorPhoneEntry.Text = this.instructorPhone;
-		InstructorEmailEntry.Text = this.instructorEmail;
-		CourseNotifyStartCb.IsChecked = this.courseNotifyOnStartDate;
-		CourseNotifyEndCb.IsChecked = this.courseNotifyOnEndDate;
+	}
+
+	private void PopulateUICourseData()
+	{
+		if (currentCourse != null)
+		{
+            CourseTitleLbl.Text = currentCourse.CourseName;
+            CourseStartDatePicker.Date = currentCourse.CourseStartDate;
+            CourseEndDatePicker.Date = currentCourse.CourseEndDate;
+            CourseStatusPicker.SelectedItem = currentCourse.CourseStatus;
+            InstructorNameEntry.Text = currentCourse.InstructorName;
+            InstructorPhoneEntry.Text = currentCourse.InstructorPhone;
+            InstructorEmailEntry.Text = currentCourse.InstructorEmail;
+            CourseNotifyStartCb.IsChecked = currentCourse.CourseNotifyOnStartDate;
+            CourseNotifyEndCb.IsChecked = currentCourse.CourseNotifyOnEndDate;
+        }
 	}
 
 	protected override async void OnAppearing()
@@ -56,20 +34,8 @@ public partial class CourseDetail : ContentPage
 		base.OnAppearing();
 		isEditCourseButtonClicked = false;
 
-		Course course = await DataServices.GetCourseById(selectedCourseId);
-		if (course != null)
-		{
-			CourseTitleLbl.Text = course.CourseName;
-			CourseStartDatePicker.Date = course.CourseStartDate;
-			CourseEndDatePicker.Date = course.CourseEndDate;
-			CourseStatusPicker.SelectedItem = course.CourseStatus;
-			InstructorNameEntry.Text = course.InstructorName;
-			InstructorPhoneEntry.Text = course.InstructorPhone;
-			InstructorEmailEntry.Text = course.InstructorEmail;
-			CourseNotifyStartCb.IsChecked = course.CourseNotifyOnStartDate;
-			CourseNotifyEndCb.IsChecked = course.CourseNotifyOnEndDate;
-			termId = course.TermId;
-		}
+		currentCourse = await DataServices.GetCourseById(currentCourse.CourseId);
+		PopulateUICourseData();
 	}
 
 	private async void EditCourseButton_Clicked(object sender, EventArgs e)
@@ -77,7 +43,7 @@ public partial class CourseDetail : ContentPage
 		if (isEditCourseButtonClicked) return;
 		isEditCourseButtonClicked = true;
 
-		await Navigation.PushAsync(new EditCoursePage(selectedCourseId,
+		await Navigation.PushAsync(new EditCoursePage(currentCourse.CourseId,
 													  CourseTitleLbl.Text,
 													  CourseStartDatePicker.Date,
 													  CourseEndDatePicker.Date,
@@ -87,6 +53,6 @@ public partial class CourseDetail : ContentPage
 													  InstructorEmailEntry.Text,
 													  CourseNotifyStartCb.IsChecked,
 													  CourseNotifyEndCb.IsChecked,
-													  termId));
+													  currentCourse.TermId));
 	}
 }

@@ -88,24 +88,44 @@
                    HorizontalOptions="Center"
                    Margin="0,0,0,20"/>
 
-            <Label Text="Nofity Course Start:"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"/>
+            <Grid VerticalOptions="Center" HorizontalOptions="Center" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Text="Nofity Course Start"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalTextAlignment="Center"/>
 
-            <CheckBox x:Name="EditCourseNotifyStartCb"/>
+                <CheckBox x:Name="EditCourseNotifyStartCb"
+                          Grid.Row="1"
+                          Grid.Column="0"/>
 
-            <Label Text="Notify Course End:"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Margin="0,0,0,10"/>
+                <Label Text="Notify Course End"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       HorizontalTextAlignment="Center"/>
 
-            <CheckBox x:Name="EditCourseNotifyEndCb"
-                      Margin="0,0,0,10"/>
+                <CheckBox x:Name="EditCourseNotifyEndCb"
+                          Grid.Row="1"
+                          Grid.Column="1"/>
+                
+            </Grid>
 
             <Button Text="Save Course Changes"
+                    Margin="10"
                     HorizontalOptions="Center"
                     WidthRequest="175"
                     Clicked="OnSaveCourseChanges_Clicked"/>
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

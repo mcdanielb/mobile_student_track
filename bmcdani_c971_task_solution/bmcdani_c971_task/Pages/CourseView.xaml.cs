@@ -115,7 +115,7 @@ public partial class CourseView : ContentPage
             Course selectedCourse = (await DataServices.GetCourses()).FirstOrDefault(c => c.CourseId == selectedCourseId);
             if (selectedCourse != null)
             {
-                await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.CourseName, selectedCourse.CourseStartDate, selectedCourse.CourseEndDate, selectedCourse.CourseStatus, selectedCourse.InstructorName, selectedCourse.InstructorPhone, selectedCourse.InstructorEmail, selectedCourse.CourseNotifyOnStartDate, selectedCourse.CourseNotifyOnEndDate, selectedCourse.TermId));
+                await Navigation.PushAsync(new CourseDetail(selectedCourse));
             }
         }
     }
