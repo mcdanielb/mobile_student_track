@@ -59,7 +59,7 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Center"/>
 
-            <Entry x:Name="EditCourseInstructorNameEntry"
+            <Entry x:Name="EditInstructorNameEntry"
                    MaxLength="50"
                    Placeholder="Course Instructor Name"
                    HorizontalTextAlignment="Center"
@@ -70,7 +70,7 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Center"/>
 
-            <Entry x:Name="EditCourseInstructorPhoneEntry"
+            <Entry x:Name="EditInstructorPhoneEntry"
                    MaxLength="20"
                    Placeholder="Course Instructor Phone"
                    HorizontalTextAlignment="Center"
@@ -81,7 +81,7 @@
                    FontAttributes="Bold"
                    HorizontalOptions="Center"/>
 
-            <Entry x:Name="EditCourseInstructorEmailEntry"
+            <Entry x:Name="EditInstructorEmailEntry"
                    MaxLength="50"
                    Placeholder="Course Instructor Email"
                    HorizontalTextAlignment="Center"
@@ -104,8 +104,8 @@
 
             <Button Text="Save Course Changes"
                     HorizontalOptions="Center"
-                    WidthRequest="175"/>
-                <!--Clicked="OnSaveCourseChanges_Clicked/>"-->
+                    WidthRequest="175"
+                    Clicked="OnSaveCourseChanges_Clicked"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

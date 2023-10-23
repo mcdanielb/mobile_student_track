@@ -2,6 +2,8 @@ namespace bmcdani_c971_task.Pages;
 
 public partial class AddTermPage : ContentPage
 {
+	private bool isAddTermButtonClicked = false;
+
 	public AddTermPage()
 	{
 		InitializeComponent();
@@ -27,6 +29,9 @@ public partial class AddTermPage : ContentPage
 
 	private async void OnAddTerm_Clicked(object sender, EventArgs e)
 	{
+		if (isAddTermButtonClicked) return;
+		isAddTermButtonClicked = true;
+
 		if (!string.IsNullOrEmpty(AddTermNameEntry.Text))
 		{
 			await DataServices.AddTerm(AddTermNameEntry.Text, AddTermStartDatePicker.Date, AddTermEndDatePicker.Date);

@@ -3,7 +3,6 @@ namespace bmcdani_c971_task.Pages;
 public partial class CourseDetail : ContentPage
 {
 	private int selectedCourseId;
-	private string selectedCourseName;
 	private DateTime courseStartDate;
 	private DateTime courseEndDate;
 	private string courseStatus;
@@ -14,7 +13,7 @@ public partial class CourseDetail : ContentPage
 	private bool courseNotifyOnEndDate;
 	private int termId;
 
-	private bool buttonClicked = false;
+	private bool isEditCourseButtonClicked = false;
 
 	public CourseDetail(int courseId,
 						string courseName,
@@ -25,7 +24,8 @@ public partial class CourseDetail : ContentPage
 						string instructorPhone,
 						string instructorEmail,
 						bool courseNotifyOnStartDate,
-						bool courseNotifyOnEndDate)
+						bool courseNotifyOnEndDate,
+						int termId)
 	{
 		InitializeComponent();
 
@@ -38,6 +38,7 @@ public partial class CourseDetail : ContentPage
 		this.instructorEmail = instructorEmail;
 		this.courseNotifyOnStartDate = courseNotifyOnStartDate;
 		this.courseNotifyOnEndDate = courseNotifyOnEndDate;
+		this.termId = termId;
 
 		CourseTitleLbl.Text = courseName;
 		CourseStartDatePicker.Date = this.courseStartDate;
@@ -53,7 +54,7 @@ public partial class CourseDetail : ContentPage
 	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
-		buttonClicked = false;
+		isEditCourseButtonClicked = false;
 
 		Course course = await DataServices.GetCourseById(selectedCourseId);
 		if (course != null)
@@ -67,14 +68,25 @@ public partial class CourseDetail : ContentPage
 			InstructorEmailEntry.Text = course.InstructorEmail;
 			CourseNotifyStartCb.IsChecked = course.CourseNotifyOnStartDate;
 			CourseNotifyEndCb.IsChecked = course.CourseNotifyOnEndDate;
+			termId = course.TermId;
 		}
 	}
 
 	private async void EditCourseButton_Clicked(object sender, EventArgs e)
 	{
-		if (buttonClicked) return;
-		buttonClicked = true;
+		if (isEditCourseButtonClicked) return;
+		isEditCourseButtonClicked = true;
 
-		await Navigation.PushAsync(new EditCoursePage(selectedCourseId, CourseTitleLbl.Text));
+		await Navigation.PushAsync(new EditCoursePage(selectedCourseId,
+													  CourseTitleLbl.Text,
+													  CourseStartDatePicker.Date,
+													  CourseEndDatePicker.Date,
+													  CourseStatusPicker.SelectedItem.ToString(),
+													  InstructorNameEntry.Text,
+													  InstructorPhoneEntry.Text,
+													  InstructorEmailEntry.Text,
+													  CourseNotifyStartCb.IsChecked,
+													  CourseNotifyEndCb.IsChecked,
+													  termId));
 	}
 }

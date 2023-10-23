@@ -5,6 +5,8 @@ public partial class AddCoursePage : ContentPage
 	int termId;
 	string termName;
 
+    private bool isAddCourseButtonClicked = false;
+
 	public AddCoursePage(int termId, string termName)
 	{
 		InitializeComponent();
@@ -33,7 +35,10 @@ public partial class AddCoursePage : ContentPage
 
 	private async void OnAddCourse_Clicked(object sender, EventArgs e)
 	{
-		if (string.IsNullOrEmpty(AddCourseNameEntry.Text) ||
+        if (isAddCourseButtonClicked) return;
+        isAddCourseButtonClicked = true;
+
+        if (string.IsNullOrEmpty(AddCourseNameEntry.Text) ||
             string.IsNullOrEmpty(AddCourseInstructorNameEntry.Text) ||
             string.IsNullOrEmpty(AddCourseInstructorPhoneEntry.Text) ||
             string.IsNullOrEmpty(AddCourseInstructorEmailEntry.Text) ||

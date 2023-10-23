@@ -3,16 +3,17 @@ namespace bmcdani_c971_task.Pages;
 public partial class EditTermPage : ContentPage
 {
 	private int termId;
+    private bool buttonClicked = false;
 
-	public EditTermPage(int termId, string termName, DateTime startDate, DateTime endDate)
+	public EditTermPage(int termId, string termName, DateTime termStartDate, DateTime termEndDate)
 	{
 		InitializeComponent();
 
 		this.termId = termId;
 
 		EditTermNameEntry.Text = termName;
-		EditTermStartDatePicker.Date = startDate;
-		EditTermEndDatePicker.Date = endDate;
+		EditTermStartDatePicker.Date = termStartDate;
+		EditTermEndDatePicker.Date = termEndDate;
 
         EditTermStartDatePicker.DateSelected += async (s, e) =>
         {
@@ -35,6 +36,9 @@ public partial class EditTermPage : ContentPage
 
 	private async void OnSaveTermChanges_Clicked(object sender, EventArgs e)
 	{
+        if (buttonClicked) return;
+        buttonClicked = true;
+
         if (!string.IsNullOrEmpty(EditTermNameEntry.Text))
         {
 			await DataServices.UpdateTerm(termId, EditTermNameEntry.Text, EditTermStartDatePicker.Date, EditTermEndDatePicker.Date);

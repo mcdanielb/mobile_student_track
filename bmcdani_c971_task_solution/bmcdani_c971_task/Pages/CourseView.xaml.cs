@@ -115,7 +115,7 @@ public partial class CourseView : ContentPage
             Course selectedCourse = (await DataServices.GetCourses()).FirstOrDefault(c => c.CourseId == selectedCourseId);
             if (selectedCourse != null)
             {
-                await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.CourseName, selectedCourse.CourseStartDate, selectedCourse.CourseEndDate, selectedCourse.CourseStatus, selectedCourse.InstructorName, selectedCourse.InstructorPhone, selectedCourse.InstructorEmail, selectedCourse.CourseNotifyOnStartDate, selectedCourse.CourseNotifyOnEndDate));
+                await Navigation.PushAsync(new CourseDetail(selectedCourseId, selectedCourse.CourseName, selectedCourse.CourseStartDate, selectedCourse.CourseEndDate, selectedCourse.CourseStatus, selectedCourse.InstructorName, selectedCourse.InstructorPhone, selectedCourse.InstructorEmail, selectedCourse.CourseNotifyOnStartDate, selectedCourse.CourseNotifyOnEndDate, selectedCourse.TermId));
             }
         }
     }
@@ -149,6 +149,9 @@ public partial class CourseView : ContentPage
         if (buttonClicked) return;
         buttonClicked = true;
 
-        await Navigation.PushAsync(new EditTermPage(selectedTermId, TermTitleLbl.Text, TermStartDatePicker.Date, TermEndDatePicker.Date));
+        await Navigation.PushAsync(new EditTermPage(selectedTermId,
+                                                    TermTitleLbl.Text,
+                                                    TermStartDatePicker.Date,
+                                                    TermEndDatePicker.Date));
     }
 }
