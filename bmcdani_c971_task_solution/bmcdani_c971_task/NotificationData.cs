@@ -19,7 +19,7 @@ public class NotificationData
             Description = description,
             Schedule =
         {
-            NotifyTime = notifyTime.AddSeconds(20)
+            NotifyTime = notifyTime
         }
         };
         await LocalNotificationCenter.Current.Show(notification);
