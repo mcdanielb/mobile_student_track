@@ -40,6 +40,7 @@ public partial class AddTermPage : ContentPage
 		else
 		{
 			await DisplayAlert("Error", "Please enter a valid term name.", "OK");
+			isAddTermButtonClicked = false;
 		}
 	}
 }

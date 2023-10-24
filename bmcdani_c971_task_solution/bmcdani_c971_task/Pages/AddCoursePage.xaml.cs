@@ -45,11 +45,13 @@ public partial class AddCoursePage : ContentPage
             AddStatusPicker.SelectedItem == null)
 		{
             await DisplayAlert("Error", "Please enter all fields.", "Ok");
+            isAddCourseButtonClicked = false;
             return;
         }
 		if (!IsValidEmail(AddCourseInstructorEmailEntry.Text))
         {
             await DisplayAlert("Error", "Please enter a valid email address.", "Ok");
+            isAddCourseButtonClicked = false;
             return;
         }
 

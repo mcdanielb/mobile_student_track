@@ -66,11 +66,13 @@ public partial class EditCoursePage : ContentPage
             EditStatusPicker.SelectedItem == null)
         {
             await DisplayAlert("Error", "Please enter all fields.", "Ok");
+            isSaveCourseButtonClicked = false;
             return;
         }
         if (!IsValidEmail(EditInstructorEmailEntry.Text))
         {
             await DisplayAlert("Error", "Please enter a valid email address.", "Ok");
+            isSaveCourseButtonClicked = false;
             return;
         }
 

@@ -36,7 +36,7 @@
         </Grid>
 
         <ScrollView Grid.Row="1">
-            <VerticalStackLayout x:Name="assessmentStackLayout" Margin="30"/>
+            <VerticalStackLayout x:Name="assessmentStackLayout" Margin="10"/>
         </ScrollView>
 
         <Grid Grid.Row="2" BackgroundColor="AliceBlue">

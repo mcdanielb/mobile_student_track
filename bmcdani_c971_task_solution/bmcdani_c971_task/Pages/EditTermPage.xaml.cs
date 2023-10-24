@@ -47,6 +47,7 @@ public partial class EditTermPage : ContentPage
 		else
 		{
 			await DisplayAlert("Error", "Please enter a valid term name.", "Ok");
+            buttonClicked = false;
 		}
     }
 }

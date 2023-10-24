@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Microsoft.Extensions.Logging.Abstractions;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -22,6 +23,8 @@ namespace bmcdani_c971_task
 
             //await db.DropTableAsync<Term>();
             //await db.DropTableAsync<Course>();
+            //await db.DropTableAsync<NotesList>();
+            //await db.DropTableAsync<Assessment>();
 
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
@@ -176,19 +179,82 @@ namespace bmcdani_c971_task
 
         // Assessment methods
 
-        public static async Task<IEnumerable<Assessment>> GetAssessments(int CourseId)
+        public static async Task AddAssessment(string assessmentName,
+                                               DateTime assessmentStartDate,
+                                               DateTime assessmentEndDate,
+                                               string assessmentType,
+                                               bool assessmentNotifyStartDate,
+                                               bool assessmentNotifyEndDate,
+                                               int courseId)
+        {
+            await Init();
+            var assessment = new Assessment
+            {
+                AssessmentName = assessmentName,
+                AssessmentStartDate = assessmentStartDate,
+                AssessmentEndDate = assessmentEndDate,
+                AssessmentType = assessmentType,
+                AssessmentNotifyStartDate = assessmentNotifyStartDate,
+                AssessmentNotifyEndDate = assessmentNotifyEndDate,
+                CourseId = courseId
+            };
+
+            await db.InsertAsync(assessment);
+        }
+
+        public static async Task<IEnumerable<Assessment>> GetAssessments(int? CourseId = null)
         {
             await Init();
 
-            var assessment = await db.Table<Assessment>().Where(a => a.CourseId == CourseId).ToListAsync();
+            var assessmentQuery = db.Table<Assessment>();
+            if (CourseId.HasValue)
+            { 
+                assessmentQuery = assessmentQuery.Where(a => a.CourseId == CourseId.Value);
+            }
+
+            var assessments = await assessmentQuery.ToListAsync();
+            return assessments;
+        }
+
+        public static async Task RemoveAssessment(int assessmentId)
+        {
+            await Init();
+
+            await db.DeleteAsync<Assessment>(assessmentId);
+        }
+
+        public static async Task<Assessment> GetAssessmentById(int assessmentId)
+        {
+            await Init();
+
+            var assessment = await db.Table<Assessment>().Where(a => a.AssessmentId == assessmentId).FirstOrDefaultAsync();
             return assessment;
         }
 
-        public static async Task RemoveAssessment(int courseId)
+        public static async Task UpdateAssessment(int assessmentId,
+                                                  string assessmentName,
+                                                  DateTime assessmentStartDate,
+                                                  DateTime assessmentEndDate,
+                                                  string assessmentType,
+                                                  bool assessmentNotifyStartDate,
+                                                  bool assessmentNotifyEndDate,
+                                                  int courseId)
         {
             await Init();
 
-            await db.DeleteAsync<Assessment>(courseId);
+            var assessmentToUpdate = await db.Table<Assessment>().Where(a => a.AssessmentId == assessmentId).FirstOrDefaultAsync();
+            if (assessmentToUpdate != null)
+            {
+                assessmentToUpdate.AssessmentName = assessmentName;
+                assessmentToUpdate.AssessmentStartDate = assessmentStartDate;
+                assessmentToUpdate.AssessmentEndDate = assessmentEndDate;
+                assessmentToUpdate.AssessmentType = assessmentType;
+                assessmentToUpdate.AssessmentNotifyStartDate = assessmentNotifyStartDate;
+                assessmentToUpdate.AssessmentNotifyEndDate = assessmentNotifyEndDate;
+                assessmentToUpdate.CourseId = courseId;
+
+                await db.UpdateAsync(assessmentToUpdate);
+            }
         }
     }
 }
