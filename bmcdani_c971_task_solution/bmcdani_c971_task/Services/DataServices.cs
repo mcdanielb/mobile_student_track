@@ -177,6 +177,38 @@ namespace bmcdani_c971_task
             }
         }
 
+        public static async Task<List<NotesList>> GetNotesByCourseId(int courseId)
+        {
+            await Init();
+
+            var notes = await db.Table<NotesList>().Where(n => n.CourseId == courseId).ToListAsync();
+
+            return notes;
+        }
+
+        public static async Task AddNote(int courseId, string noteContent)
+        {
+            await Init();
+            var note = new NotesList
+            {
+                NoteContent = noteContent,
+                CourseId = courseId
+            };
+
+            await db.InsertAsync(note);
+        }
+
+        public static async Task DeleteNote(int noteId)
+        {
+            await Init();
+
+            var note = await db.FindAsync<NotesList>(noteId);
+            if (note != null)
+            {
+                await db.DeleteAsync(note);
+            }
+        }
+
         // Assessment methods
 
         public static async Task AddAssessment(string assessmentName,

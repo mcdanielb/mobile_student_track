@@ -19,6 +19,9 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\dotnet_bot.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\dotnet_bot@2x.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\dotnet_bot@3x.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\edit.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\edit@2x.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\edit@3x.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\Resources\wgu_banner.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\Resources\wgu_logo.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-ios\ios-arm64\resizetizer\r\splash.png

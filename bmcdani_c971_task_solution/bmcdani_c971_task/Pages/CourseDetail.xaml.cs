@@ -1,3 +1,6 @@
+using bmcdani_c971_task.ViewModels;
+using System.Text;
+
 namespace bmcdani_c971_task.Pages;
 
 public partial class CourseDetail : ContentPage
@@ -10,6 +13,7 @@ public partial class CourseDetail : ContentPage
 		InitializeComponent();
 
 		this.currentCourse = course;
+		this.BindingContext = new CourseDetailViewModel(course.CourseId);
 
 	}
 
@@ -56,7 +60,12 @@ public partial class CourseDetail : ContentPage
 													  currentCourse.TermId));
 	}
 
-	private async void AssessmentsButton_Clicked(object sender, EventArgs e)
+	private void OnAddNoteButtonClicked(object sender, EventArgs e)
+	{
+		AddNoteEntry.Text = string.Empty;
+	}
+
+    private async void AssessmentsButton_Clicked(object sender, EventArgs e)
 	{
 		if (isButtonClicked) return;
 		isButtonClicked = true;

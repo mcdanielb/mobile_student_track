@@ -20,10 +20,10 @@
 
                 <Label x:Name="CourseAssessmentsTitleLbl"
                    Grid.Row="0"
-                   Text="Course Assessments Title"
+                   Text="Course Assessments"
                    FontSize="24"
                    Margin="15"
-                   SemanticProperties.Hint="Course Assessments Title"
+                   SemanticProperties.Hint="Course Assessments"
                    VerticalOptions="Start" 
                    HorizontalOptions="Center" />
 

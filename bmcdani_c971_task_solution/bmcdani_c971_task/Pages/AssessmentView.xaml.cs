@@ -32,12 +32,12 @@ public partial class AssessmentView : ContentPage
 		{
             Grid assessmentGrid = new Grid
             {
-                VerticalOptions = LayoutOptions.Fill,
                 HorizontalOptions = LayoutOptions.Center,
-                ColumnSpacing = 30,
+                ColumnSpacing = 20,
 
                 RowDefinitions =
                 {
+                    new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) },
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) },
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) },
                     new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) },
@@ -49,39 +49,51 @@ public partial class AssessmentView : ContentPage
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) },
                     new ColumnDefinition { Width = new GridLength(2, GridUnitType.Star) }
                 },
-                Margin = new Thickness(0, 5)
+                Margin = new Thickness(50, 10)
             };
 
-            assessmentGrid.Add(new Label { Text = "Name:" }, 0, 0);
-            assessmentGrid.Add(new Entry { IsEnabled = false, Text = assessment.AssessmentName, TextColor = Colors.Black, HorizontalTextAlignment = TextAlignment.Center }, 1, 0);
+            assessmentGrid.Add(new Label { Text = "Name:", VerticalOptions = LayoutOptions.Center }, 0, 1);
+            assessmentGrid.Add(new Entry { IsEnabled = false, Text = assessment.AssessmentName, MaxLength = 30, TextColor = Colors.Black, HorizontalTextAlignment = TextAlignment.Center, VerticalOptions = LayoutOptions.Center }, 1, 1);
 
-            assessmentGrid.Add(new Label { Text = "Start Date:" }, 0, 1);
-            assessmentGrid.Add(new DatePicker { IsEnabled = false, Date = assessment.AssessmentStartDate, TextColor = Colors.Black, HorizontalOptions = LayoutOptions.Center }, 1, 1);
+            assessmentGrid.Add(new Label { Text = "Start Date:", VerticalOptions = LayoutOptions.Center }, 0, 2);
+            assessmentGrid.Add(new DatePicker { IsEnabled = false, Date = assessment.AssessmentStartDate, TextColor = Colors.Black, HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center }, 1, 2);
 
-            assessmentGrid.Add(new Label { Text = "End Date:" }, 0, 2);
-            assessmentGrid.Add(new DatePicker { IsEnabled = false, Date = assessment.AssessmentEndDate, TextColor = Colors.Black, HorizontalOptions = LayoutOptions.Center }, 1, 2);
+            assessmentGrid.Add(new Label { Text = "End Date:", VerticalOptions = LayoutOptions.Center }, 0, 3);
+            assessmentGrid.Add(new DatePicker { IsEnabled = false, Date = assessment.AssessmentEndDate, TextColor = Colors.Black, HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center }, 1, 3);
 
-            assessmentGrid.Add(new Label { Text = "Notify Start" }, 0, 3);
-            assessmentGrid.Add(new CheckBox { IsEnabled = false, IsChecked = assessment.AssessmentNotifyStartDate, }, 1, 3);
+            assessmentGrid.Add(new Label { Text = "Notify Start:", VerticalOptions = LayoutOptions.Center }, 0, 4);
+            assessmentGrid.Add(new CheckBox { IsEnabled = false, IsChecked = assessment.AssessmentNotifyStartDate, VerticalOptions = LayoutOptions.Center }, 1, 4);
 
-            assessmentGrid.Add(new Label { Text = "Notify End" }, 0, 4);
-            assessmentGrid.Add(new CheckBox { IsEnabled = false, IsChecked = assessment.AssessmentNotifyEndDate, }, 1, 4);
+            assessmentGrid.Add(new Label { Text = "Notify End:", VerticalOptions = LayoutOptions.Center }, 0, 5);
+            assessmentGrid.Add(new CheckBox { IsEnabled = false, IsChecked = assessment.AssessmentNotifyEndDate, VerticalOptions = LayoutOptions.Center }, 1, 5);
+
+            Button assessmentTypeBtn = new Button
+            {
+                IsEnabled = false,
+                Text = assessment.AssessmentType,
+                TextColor = Colors.White,
+                BackgroundColor = Colors.MidnightBlue,
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Center,
+                //WidthRequest = 195
+            };
+
+            assessmentGrid.Add(assessmentTypeBtn, 0, 0);
+            Grid.SetColumnSpan(assessmentTypeBtn, 2);
 
             Button selectAssessmentBtn = new Button
             {
-                //IsEnabled = false,
                 Text = "Select",
                 CommandParameter = assessment.AssessmentId,
-                
                 BackgroundColor = Colors.Transparent,
                 BorderWidth = 0,
-                Opacity = 0.5
+                Opacity = 0.3
             };
 
             selectAssessmentBtn.Clicked += SelectAssessmentBtn_Clicked;
 
             assessmentGrid.Add(selectAssessmentBtn, 0, 0);
-            Grid.SetRowSpan(selectAssessmentBtn, 5);
+            Grid.SetRowSpan(selectAssessmentBtn, 6);
             Grid.SetColumnSpan(selectAssessmentBtn, 2);
 
             assessmentStackLayout.Children.Add(assessmentGrid);

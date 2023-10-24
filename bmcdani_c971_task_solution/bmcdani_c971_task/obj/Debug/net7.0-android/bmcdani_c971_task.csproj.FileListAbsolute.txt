@@ -1,7 +1,3 @@
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Mono.Android.dll
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VectorDrawable.Animated.pdb
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.ViewPager.dll
-F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.Google.Crypto.Tink.Android.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\build.props
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\adb.props
@@ -17,14 +13,19 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\f\OpenSans-Regular.ttf
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\f\OpenSans-Semibold.ttf
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\edit.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-hdpi\splash.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\dotnet_bot.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\edit.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-mdpi\splash.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\edit.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xhdpi\splash.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\edit.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xxhdpi\splash.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\dotnet_bot.png
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\edit.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable-xxxhdpi\splash.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable\wgu_banner.png
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\resizetizer\r\drawable\wgu_logo.png
@@ -163,6 +164,7 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Microsoft.VisualBasic.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Microsoft.Win32.Primitives.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Microsoft.Win32.Registry.dll
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Mono.Android.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Mono.Android.Export.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Mono.Android.Export.pdb
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Mono.Android.pdb
@@ -462,10 +464,12 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.Transition.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.Transition.pdb
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VectorDrawable.Animated.dll
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VectorDrawable.Animated.pdb
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VectorDrawable.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VectorDrawable.pdb
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VersionedParcelable.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.VersionedParcelable.pdb
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.ViewPager.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.ViewPager.pdb
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.ViewPager2.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.ViewPager2.pdb
@@ -473,6 +477,7 @@ F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.AndroidX.Window.pdb
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.Google.Android.Material.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.Google.Android.Material.pdb
+F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.Google.Crypto.Tink.Android.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.Google.Guava.ListenableFuture.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.GooglePlayServices.Base.dll
 F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-android\android\assets\Xamarin.GooglePlayServices.Base.pdb
