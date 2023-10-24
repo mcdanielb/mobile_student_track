@@ -29,7 +29,7 @@ public partial class AssessmentView : ContentPage
         assessmentStackLayout.Children.Clear();
 
         foreach (var assessment in assessments)
-		{
+        {
             Grid assessmentGrid = new Grid
             {
                 HorizontalOptions = LayoutOptions.Center,
@@ -97,6 +97,20 @@ public partial class AssessmentView : ContentPage
             Grid.SetColumnSpan(selectAssessmentBtn, 2);
 
             assessmentStackLayout.Children.Add(assessmentGrid);
+
+            await HandleAssessmentNotifyScheduleOrCancel(
+                assessment.AssessmentNotifyStartDate,
+                201,
+                "Assessment Start Notification",
+                $"The assessment {assessment.AssessmentName} starts today!",
+                assessment.AssessmentStartDate);
+
+            await HandleAssessmentNotifyScheduleOrCancel(
+                assessment.AssessmentNotifyEndDate,
+                202,
+                "Assessment End Notification",
+                $"The assessment {assessment.AssessmentName} ends today!",
+                assessment.AssessmentEndDate);
         }
     }
 
@@ -106,6 +120,12 @@ public partial class AssessmentView : ContentPage
         isButtonClicked = false;
 
         UpdateAssessmentGrid();
+    }
+
+    private async Task HandleAssessmentNotifyScheduleOrCancel(bool isChecked, int notificationId, string title, string description, DateTime notifyTime)
+    {
+        var notificationData = new NotificationData();
+        await notificationData.ScheduleOrCancelNotification(isChecked, notificationId, title, description, notifyTime);
     }
 
     private async void AddAssessmentBtn_Clicked(object sender, EventArgs e)

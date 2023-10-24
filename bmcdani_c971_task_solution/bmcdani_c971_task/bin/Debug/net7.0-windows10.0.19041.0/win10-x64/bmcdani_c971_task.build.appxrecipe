@@ -922,12 +922,6 @@
     <AppxPackagedFile Include="F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\edit.scale-400.png">
       <PackagePath>edit.scale-400.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\trash.scale-100.png">
-      <PackagePath>trash.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\trash_can.scale-100.png">
-      <PackagePath>trash_can.scale-100.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Dropbox\WGU\C971\bmcdani_C971_task_solution\bmcdani_c971_task\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wgu_banner.scale-100.png">
       <PackagePath>wgu_banner.scale-100.png</PackagePath>
     </AppxPackagedFile>

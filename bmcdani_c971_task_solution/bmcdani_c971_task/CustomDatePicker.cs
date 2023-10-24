@@ -7,7 +7,7 @@ public class CustomDatePicker : DatePicker
         this.MinimumDate = new DateTime(2018, 1, 1);
         this.MaximumDate = new DateTime(2030, 12, 31);
         //this.Date = new DateTime(2023, 10, 18);
-        this.Date = DateTime.Today;
+        this.Date = DateTime.Now;
 
         this.DateSelected += OnDateSelected;
     }

@@ -12,5 +12,6 @@ namespace bmcdani_c971_task
         }
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
+
     }
 }
