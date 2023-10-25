@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj": {}
+    "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj": {}
   },
   "projects": {
-    "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj": {
+    "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
+        "projectUniqueName": "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
         "projectName": "bmcdani_c971_task",
-        "projectPath": "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
+        "projectPath": "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
         "packagesPath": "C:\\Users\\Bradley\\.nuget\\packages\\",
-        "outputPath": "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\obj\\",
+        "outputPath": "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -423,6 +423,10 @@
               "version": "[7.0.12, 7.0.12]"
             },
             {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
+              "version": "[7.0.12, 7.0.12]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
               "version": "[7.0.12, 7.0.12]"
             },
@@ -469,6 +473,9 @@
           "#import": []
         },
         "ios-arm64": {
+          "#import": []
+        },
+        "maccatalyst-arm64": {
           "#import": []
         },
         "maccatalyst-x64": {

@@ -1,5 +1,4 @@
 using Plugin.LocalNotification;
-using System.Security.Cryptography.X509Certificates;
 
 namespace bmcdani_c971_task;
 
