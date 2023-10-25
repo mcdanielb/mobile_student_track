@@ -17,7 +17,13 @@ namespace bmcdani_c971_task
         {
             InitializeComponent();
 
-            UpdateTermsAsync();
+            MainPageInitialization();
+        }
+
+        private async void MainPageInitialization()
+        {
+            await DataServices.PrepopulateData();
+            await UpdateTermsAsync();
         }
 
         private async Task UpdateTermsAsync()

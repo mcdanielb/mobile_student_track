@@ -1,6 +1,6 @@
-﻿using Microsoft.Extensions.Logging.Abstractions;
-using SQLite;
+﻿using SQLite;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -21,10 +21,10 @@ namespace bmcdani_c971_task
 
             db = new SQLiteAsyncConnection(databasePath);
 
-            //await db.DropTableAsync<Term>();
-            //await db.DropTableAsync<Course>();
-            //await db.DropTableAsync<NotesList>();
-            //await db.DropTableAsync<Assessment>();
+            // await db.DropTableAsync<Term>();
+            // await db.DropTableAsync<Course>();
+            // await db.DropTableAsync<NotesList>();
+            // await db.DropTableAsync<Assessment>();
 
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
@@ -32,11 +32,52 @@ namespace bmcdani_c971_task
             await db.CreateTableAsync<Assessment>();
         }
 
+        // Prepopulate Data (called in MainPage.xaml.cs)
+
+        public static async Task PrepopulateData()
+        {
+            await Init();
+
+            var terms = await GetTerms();
+            int termId;
+            if (!terms.Any())
+            {
+                await AddTerm("Sample Term", DateTime.Now, DateTime.Now.AddMonths(1));
+                var sampleAddedTerm = await GetTerms();
+                termId = sampleAddedTerm.First().TermId;
+            }
+            else
+            {
+                termId = terms.First().TermId;
+            }
+
+            var courses = await GetCourses(termId);
+            int courseId;
+            if (!courses.Any())
+            {
+                await AddCourse("Sample Course", DateTime.Now, DateTime.Now.AddDays(10), "In Progress", "Anika Patel", "555-123-4567", "anika.patel@strimeuniversity.edu", true, true, termId);
+                var sampleAddedCourse = await GetCourses(termId);
+                courseId = sampleAddedCourse.First().CourseId;
+            }
+            else
+            {
+                courseId = courses.First().CourseId;
+            }
+
+            var assessments = await GetAssessments(courseId);
+            if (!assessments.Any())
+            {
+                await AddAssessment("Final Exam", DateTime.Now, DateTime.Now.AddDays(10), "Performance Assessment", true, true, courseId);
+                await AddAssessment("Final Project", DateTime.Now, DateTime.Now.AddDays(10), "Objective Assessment", true, true, courseId);
+            }
+        }
+
         // Term Methods
 
         public static async Task AddTerm(string termName, DateTime termStartDate, DateTime termEndDate)
         {
             await Init();
+
             var term = new Term
             {
                 TermName = termName,
