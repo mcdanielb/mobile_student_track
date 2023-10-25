@@ -4,6 +4,7 @@ public partial class EditAssessmentPage : ContentPage
 {
 	private int assessmentId;
     private int courseId;
+    private Assessment assessment;
 
 	private bool isSaveAssessmentButtonClicked = false;
 
@@ -37,7 +38,7 @@ public partial class EditAssessmentPage : ContentPage
 
     private async void LoadAssessmentData()
     {
-        var assessment = await DataServices.GetAssessmentById(assessmentId);
+        assessment = await DataServices.GetAssessmentById(assessmentId);
 
         EditAssessmentNameEntry.Text = assessment.AssessmentName;
         EditAssessmentStartDatePicker.Date = assessment.AssessmentStartDate;
@@ -68,6 +69,36 @@ public partial class EditAssessmentPage : ContentPage
                                             EditAssessmentNotifyStartCb.IsChecked,
                                             EditAssessmentNotifyEndCb.IsChecked,
                                             courseId);
+        
+        if (EditAssessmentNotifyStartCb.IsChecked)
+        {
+            await NotificationData.ScheduleOrCancelNotification(true, 
+                                                                 201,
+                                                                 assessment.AssessmentName,
+                                                                 "Assessment Start Notification",
+                                                                 $"The assessment {assessment.AssessmentName} starts today!",
+                                                                 EditAssessmentStartDatePicker.Date);
+        }
+        else
+        {
+            int cancelId = NotificationData.GenerateNotificationId(201, assessment.AssessmentName);
+            await NotificationData.CancelNotification(cancelId);
+        }
+        if (EditAssessmentNotifyEndCb.IsChecked)
+        {
+            await NotificationData.ScheduleOrCancelNotification(true,
+                                                                202,
+                                                                assessment.AssessmentName,
+                                                                "Assessment End Notification",
+                                                                $"The assessment {assessment.AssessmentName} ends today!",
+                                                                EditAssessmentEndDatePicker.Date);
+        }
+        else
+        {
+            int cancelId = NotificationData.GenerateNotificationId(202, assessment.AssessmentName);
+            await NotificationData.CancelNotification(cancelId);
+        }
+
         await Navigation.PopAsync();
     }
 }

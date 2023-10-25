@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L0aclhU494Nzl8oOBQOzrpZ+2e0TWooBmmcRIrEsLYaTW28cb+7qAXTv+Ua774mAxUuvk51dCEL8X7L1l5kWFw==",
+  "dgSpecHash": "4OReGxflpOwcV8JM3YwBedD83SQ3sQITEjNv0J5hbqSX7Xa+fzVMWqqjfT381gRE4UWvDetH3M7yvNWoanzkqg==",
   "success": true,
   "projectFilePath": "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
   "expectedPackageFiles": [
@@ -121,7 +121,6 @@
     "C:\\Users\\Bradley\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.8.0.1\\xamarin.kotlin.stdlib.jdk8.1.8.0.1.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.6.4.2\\xamarin.kotlinx.coroutines.android.1.6.4.2.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.4.2\\xamarin.kotlinx.coroutines.core.jvm.1.6.4.2.nupkg.sha512",
-    "C:\\Users\\Bradley\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.12\\microsoft.netcore.app.crossgen2.win-x64.7.0.12.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.29\\microsoft.windows.sdk.net.ref.10.0.19041.29.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.12\\microsoft.aspnetcore.app.runtime.win-x64.7.0.12.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.12\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.12.nupkg.sha512",

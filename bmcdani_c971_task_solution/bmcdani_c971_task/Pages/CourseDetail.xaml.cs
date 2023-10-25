@@ -39,27 +39,7 @@ public partial class CourseDetail : ContentPage
 
 		currentCourse = await DataServices.GetCourseById(currentCourse.CourseId);
 		PopulateUICourseData();
-
-        await HandleCourseNotifyScheduleOrCancel(
-            CourseNotifyStartCb.IsChecked,
-            101,
-            "Course Start Notification",
-            $"The course {currentCourse.CourseName} starts today!",
-            currentCourse.CourseStartDate);
-
-        await HandleCourseNotifyScheduleOrCancel(
-            CourseNotifyEndCb.IsChecked,
-            102,
-            "Course End Notification",
-            $"The course {currentCourse.CourseName} ends today!",
-            currentCourse.CourseEndDate);
     }
-
-	private async Task HandleCourseNotifyScheduleOrCancel(bool isChecked, int notificationId, string title, string description, DateTime notifyTime)
-	{
-		var notificationData = new NotificationData();
-		await notificationData.ScheduleOrCancelNotification(isChecked, notificationId, title, description, notifyTime);
-	}
 
 	private async void EditCourseButton_Clicked(object sender, EventArgs e)
 	{

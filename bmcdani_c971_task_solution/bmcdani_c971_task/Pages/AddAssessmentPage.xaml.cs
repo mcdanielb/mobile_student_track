@@ -53,6 +53,38 @@ public partial class AddAssessmentPage : ContentPage
                                          AddAssessmentNotifyStartCb.IsChecked,
                                          AddAssessmentNotifyEndCb.IsChecked,
                                          courseId);
+
+        string assessmentName = AddAssessmentNameEntry.Text;
+
+        if (AddAssessmentNotifyStartCb.IsChecked)
+        {
+            await NotificationData.ScheduleOrCancelNotification(true,
+                                                                 201,
+                                                                 assessmentName,
+                                                                 "Assessment Start Notification",
+                                                                 $"The assessment {assessmentName} starts today!",
+                                                                 AddAssessmentStartDatePicker.Date);
+        }
+        else
+        {
+            int cancelId = NotificationData.GenerateNotificationId(201, assessmentName);
+            await NotificationData.CancelNotification(cancelId);
+        }
+        if (AddAssessmentNotifyEndCb.IsChecked)
+        {
+            await NotificationData.ScheduleOrCancelNotification(true,
+                                                                202,
+                                                                assessmentName,
+                                                                "Assessment End Notification",
+                                                                $"The assessment {assessmentName} ends today!",
+                                                                AddAssessmentEndDatePicker.Date);
+        }
+        else
+        {
+            int cancelId = NotificationData.GenerateNotificationId(202, assessmentName);
+            await NotificationData.CancelNotification(cancelId);
+        }
+
         await Navigation.PopAsync();
     }
 }

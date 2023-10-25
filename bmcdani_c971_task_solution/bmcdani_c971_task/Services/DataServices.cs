@@ -21,10 +21,10 @@ namespace bmcdani_c971_task
 
             db = new SQLiteAsyncConnection(databasePath);
 
-            // await db.DropTableAsync<Term>();
-            // await db.DropTableAsync<Course>();
-            // await db.DropTableAsync<NotesList>();
-            // await db.DropTableAsync<Assessment>();
+            await db.DropTableAsync<Term>();
+            await db.DropTableAsync<Course>();
+            await db.DropTableAsync<NotesList>();
+            await db.DropTableAsync<Assessment>();
 
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
@@ -38,11 +38,13 @@ namespace bmcdani_c971_task
         {
             await Init();
 
+            DateTime specificDate = new DateTime(2023, 10, 1);
+
             var terms = await GetTerms();
             int termId;
             if (!terms.Any())
             {
-                await AddTerm("Sample Term", DateTime.Now, DateTime.Now.AddMonths(1));
+                await AddTerm("Sample Term", specificDate, DateTime.Now.AddMonths(1));
                 var sampleAddedTerm = await GetTerms();
                 termId = sampleAddedTerm.First().TermId;
             }
@@ -55,7 +57,7 @@ namespace bmcdani_c971_task
             int courseId;
             if (!courses.Any())
             {
-                await AddCourse("Sample Course", DateTime.Now, DateTime.Now.AddDays(10), "In Progress", "Anika Patel", "555-123-4567", "anika.patel@strimeuniversity.edu", true, true, termId);
+                await AddCourse("Sample Course", specificDate, DateTime.Now.AddDays(10), "In Progress", "Anika Patel", "555-123-4567", "anika.patel@strimeuniversity.edu", true, true, termId);
                 var sampleAddedCourse = await GetCourses(termId);
                 courseId = sampleAddedCourse.First().CourseId;
             }
@@ -67,8 +69,8 @@ namespace bmcdani_c971_task
             var assessments = await GetAssessments(courseId);
             if (!assessments.Any())
             {
-                await AddAssessment("Final Exam", DateTime.Now, DateTime.Now.AddDays(10), "Performance Assessment", true, true, courseId);
-                await AddAssessment("Final Project", DateTime.Now, DateTime.Now.AddDays(10), "Objective Assessment", true, true, courseId);
+                await AddAssessment("Final Exam", specificDate, DateTime.Now.AddDays(10), "Performance Assessment", true, true, courseId);
+                await AddAssessment("Final Project", specificDate, DateTime.Now.AddDays(10), "Objective Assessment", true, true, courseId);
             }
         }
 

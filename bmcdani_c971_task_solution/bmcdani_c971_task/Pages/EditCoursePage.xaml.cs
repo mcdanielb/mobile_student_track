@@ -87,6 +87,38 @@ public partial class EditCoursePage : ContentPage
                                         EditCourseNotifyStartCb.IsChecked,
                                         EditCourseNotifyEndCb.IsChecked,
                                         termId);
+
+        string courseName = EditCourseNameEntry.Text;
+
+        if (EditCourseNotifyStartCb.IsChecked)
+        {
+            await NotificationData.ScheduleOrCancelNotification(true,
+                                                                101,
+                                                                courseName,
+                                                                "Course Start Notification",
+                                                                $"The course {courseName} starts today!",
+                                                                EditCourseStartDatePicker.Date);
+        }
+        else
+        {
+            int cancelId = NotificationData.GenerateNotificationId(101, courseName);
+            await NotificationData.CancelNotification(cancelId);
+        }
+        if (EditCourseNotifyEndCb.IsChecked)
+        {
+            await NotificationData.ScheduleOrCancelNotification(true,
+                                                                102,
+                                                                courseName,
+                                                                "Course End Notification",
+                                                                $"The course {courseName} ends today!",
+                                                                EditCourseEndDatePicker.Date);
+        }
+        else
+        {
+            int cancelId = NotificationData.GenerateNotificationId(102, courseName);
+            await NotificationData.CancelNotification(cancelId);
+        }
+
         await Navigation.PopAsync();
     }
 
