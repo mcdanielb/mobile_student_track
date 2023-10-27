@@ -21,10 +21,10 @@ namespace bmcdani_c971_task
 
             db = new SQLiteAsyncConnection(databasePath);
 
-            await db.DropTableAsync<Term>();
-            await db.DropTableAsync<Course>();
-            await db.DropTableAsync<NotesList>();
-            await db.DropTableAsync<Assessment>();
+            //await db.DropTableAsync<Term>();
+            //await db.DropTableAsync<Course>();
+            //await db.DropTableAsync<NotesList>();
+            //await db.DropTableAsync<Assessment>();
 
             await db.CreateTableAsync<Term>();
             await db.CreateTableAsync<Course>();
