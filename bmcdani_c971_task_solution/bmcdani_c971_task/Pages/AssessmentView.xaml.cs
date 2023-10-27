@@ -205,21 +205,19 @@ public partial class AssessmentView : ContentPage
     private async void SelectAssessmentBtn_Clicked(object sender, EventArgs e)
     {
         Button clickedButton = (Button)sender;
+        int assessmentId = (int)clickedButton.CommandParameter;
 
         if (isAssessmentDeleteMode)
         {
             bool isConfirmed = await DisplayAlert("Delete Assessment", "Are you sure you want to delete this assessment?", "Yes", "No");
             if (isConfirmed)
             {
-                int assessmentId = (int)clickedButton.CommandParameter;
                 await DataServices.RemoveAssessment(assessmentId);
-
                 await UpdateAssessmentGrid();
             }
         }
         if (isAssessmentEditMode)
         {
-            int assessmentId = (int)clickedButton.CommandParameter;
             await Navigation.PushAsync(new EditAssessmentPage(assessmentId));
         }
     }

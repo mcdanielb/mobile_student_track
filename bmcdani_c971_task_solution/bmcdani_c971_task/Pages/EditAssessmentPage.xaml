@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:bmcdani_c971_task"
              x:Class="bmcdani_c971_task.Pages.EditAssessmentPage"
-             Title="EditAssessmentPage">
+             Title="Edit Assessment">
     <VerticalStackLayout VerticalOptions="Start"
                          HorizontalOptions="CenterAndExpand"
                          Padding="20">

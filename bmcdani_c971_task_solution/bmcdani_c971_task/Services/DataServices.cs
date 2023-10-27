@@ -32,7 +32,7 @@ namespace bmcdani_c971_task
             await db.CreateTableAsync<Assessment>();
         }
 
-        // Prepopulate Data (called in MainPage.xaml.cs)
+        // Prepopulate Data (Called in MainPage.xaml.cs)
 
         public static async Task PrepopulateData()
         {
@@ -130,16 +130,7 @@ namespace bmcdani_c971_task
 
         // Course Methods
 
-        public static async Task AddCourse(string courseName,
-                                           DateTime courseStartDate,
-                                           DateTime courseEndDate,
-                                           string courseStatus,
-                                           string instructorName,
-                                           string instructorPhone,
-                                           string instructorEmail,
-                                           bool courseNotifyOnStartDate,
-                                           bool courseNotifyOnEndDate,
-                                           int termId)
+        public static async Task AddCourse(string courseName, DateTime courseStartDate, DateTime courseEndDate, string courseStatus, string instructorName, string instructorPhone, string instructorEmail, bool courseNotifyOnStartDate, bool courseNotifyOnEndDate, int termId)
         {
             await Init();
             var course = new Course
@@ -188,17 +179,7 @@ namespace bmcdani_c971_task
             return course;
         }
 
-        public static async Task UpdateCourse(int courseId,
-                                              string courseName,
-                                              DateTime courseStartDate,
-                                              DateTime courseEndDate,
-                                              string courseStatus,
-                                              string instructorName,
-                                              string instructorPhone,
-                                              string instructorEmail,
-                                              bool courseNotifyOnStartDate,
-                                              bool courseNotifyOnEndDate,
-                                              int termId)
+        public static async Task UpdateCourse(int courseId, string courseName, DateTime courseStartDate, DateTime courseEndDate, string courseStatus, string instructorName, string instructorPhone, string instructorEmail, bool courseNotifyOnStartDate, bool courseNotifyOnEndDate, int termId)
         {
             await Init();
 
@@ -252,15 +233,16 @@ namespace bmcdani_c971_task
             }
         }
 
+        public static async Task<int> GetCourseCountByTermId(int termId)
+        {
+            await Init();
+
+            return await db.Table<Course>().Where(c => c.TermId == termId).CountAsync();
+        }
+
         // Assessment methods
 
-        public static async Task AddAssessment(string assessmentName,
-                                               DateTime assessmentStartDate,
-                                               DateTime assessmentEndDate,
-                                               string assessmentType,
-                                               bool assessmentNotifyStartDate,
-                                               bool assessmentNotifyEndDate,
-                                               int courseId)
+        public static async Task AddAssessment(string assessmentName, DateTime assessmentStartDate, DateTime assessmentEndDate, string assessmentType, bool assessmentNotifyStartDate, bool assessmentNotifyEndDate, int courseId)
         {
             await Init();
             var assessment = new Assessment
@@ -306,14 +288,7 @@ namespace bmcdani_c971_task
             return assessment;
         }
 
-        public static async Task UpdateAssessment(int assessmentId,
-                                                  string assessmentName,
-                                                  DateTime assessmentStartDate,
-                                                  DateTime assessmentEndDate,
-                                                  string assessmentType,
-                                                  bool assessmentNotifyStartDate,
-                                                  bool assessmentNotifyEndDate,
-                                                  int courseId)
+        public static async Task UpdateAssessment(int assessmentId, string assessmentName, DateTime assessmentStartDate, DateTime assessmentEndDate, string assessmentType, bool assessmentNotifyStartDate, bool assessmentNotifyEndDate, int courseId)
         {
             await Init();
 
@@ -330,6 +305,13 @@ namespace bmcdani_c971_task
 
                 await db.UpdateAsync(assessmentToUpdate);
             }
+        }
+
+        public static async Task<int> GetAssessmentCountByType(string type, int courseId)
+        {
+            await Init();
+
+            return await db.Table<Assessment>().Where(a => a.CourseId == courseId && a.AssessmentType == type).CountAsync();
         }
     }
 }

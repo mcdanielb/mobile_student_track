@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4OReGxflpOwcV8JM3YwBedD83SQ3sQITEjNv0J5hbqSX7Xa+fzVMWqqjfT381gRE4UWvDetH3M7yvNWoanzkqg==",
+  "dgSpecHash": "w43h2RXQLEcNlK+LH+oZclVLQ9owyTaXlykQ+MXflWEcfGUgpuRSVUnnQn1LXtQTk0mvTthMNGV036NRqzosZA==",
   "success": true,
-  "projectFilePath": "F:\\Dropbox\\WGU\\C971\\bmcdani_c971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
+  "projectFilePath": "F:\\Dropbox\\WGU\\C971\\bmcdani_C971_task_solution\\bmcdani_c971_task\\bmcdani_c971_task.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bradley\\.nuget\\packages\\communitytoolkit.maui\\6.0.0\\communitytoolkit.maui.6.0.0.nupkg.sha512",
     "C:\\Users\\Bradley\\.nuget\\packages\\communitytoolkit.maui.core\\6.0.0\\communitytoolkit.maui.core.6.0.0.nupkg.sha512",

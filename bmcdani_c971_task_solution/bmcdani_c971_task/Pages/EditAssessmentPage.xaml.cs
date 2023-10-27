@@ -61,6 +61,18 @@ public partial class EditAssessmentPage : ContentPage
             return;
         }
 
+        var selectedType = EditAssessmentTypePicker.SelectedItem.ToString();
+        if (selectedType != assessment.AssessmentType)
+        {
+            int assessmentCount = await DataServices.GetAssessmentCountByType(selectedType, courseId);
+            if (assessmentCount >= 1)
+            {
+                await DisplayAlert("Error", $"There is already a {selectedType} for this course, please select another type.", "Ok");
+                isSaveAssessmentButtonClicked = false;
+                return;
+            }
+        }
+
         await DataServices.UpdateAssessment(assessmentId,
                                             EditAssessmentNameEntry.Text,
                                             EditAssessmentStartDatePicker.Date,

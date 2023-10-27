@@ -141,6 +141,15 @@ public partial class CourseView : ContentPage
         if (buttonClicked) return;
         buttonClicked = true;
 
+        int currentCourseCount = await DataServices.GetCourseCountByTermId(selectedTermId);
+
+        if (currentCourseCount >= 6)
+        {
+            await DisplayAlert("Error", "Only a maximum of six courses are allowed per term.", "Ok");
+            buttonClicked = false;
+            return;
+        }
+
         await Navigation.PushAsync(new AddCoursePage(selectedTermId, TermTitleLbl.Text));
     }
 

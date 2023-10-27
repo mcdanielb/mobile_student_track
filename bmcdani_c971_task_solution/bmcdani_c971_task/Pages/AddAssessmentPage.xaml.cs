@@ -46,6 +46,22 @@ public partial class AddAssessmentPage : ContentPage
             return;
         }
 
+        string selectedType = AddAssessmentTypePicker.SelectedItem.ToString();
+        int existingCount = await DataServices.GetAssessmentCountByType(selectedType, courseId);
+
+        if (selectedType == "Objective Assessment" && existingCount >= 1)
+        {
+            await DisplayAlert("Error", $"Only one {selectedType} is allowed per course.", "Ok");
+            isAddAssessmentButtonClicked = false;
+            return;
+        }
+        else if (selectedType == "Performance Assessment" && existingCount >= 1)
+        {
+            await DisplayAlert("Error", $"Only one {selectedType} is allowed per course.", "Ok");
+            isAddAssessmentButtonClicked = false;
+            return;
+        }
+
         await DataServices.AddAssessment(AddAssessmentNameEntry.Text,
                                          AddAssessmentStartDatePicker.Date,
                                          AddAssessmentEndDatePicker.Date,
