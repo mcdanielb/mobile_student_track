@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:bmcdani_academic_tracking"
+             x:Class="bmcdani_academic_tracking.Pages.CourseView"
+             Title="Courses">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="AliceBlue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="TermTitleLbl"
+                       Grid.Row="0"
+                       Text="Term Title"
+                       FontSize="24"
+                       Margin="15"
+                       SemanticProperties.Hint="Term Title"
+                       VerticalOptions="Start" 
+                       HorizontalOptions="Center" />
+
+                <BoxView Grid.Row="1"
+                         HeightRequest="2"
+                         Color="WhiteSmoke"
+                         HorizontalOptions="FillAndExpand" />
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,15,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0"
+                         Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand">
+                
+                <Label Text="Term Start"
+                       HorizontalOptions="CenterAndExpand" />
+
+                <local:CustomDatePicker x:Name="TermStartDatePicker"
+                                        IsEnabled="False"
+                                        TextColor="Black"
+                                        HorizontalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="1"
+                         Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand">
+                
+                <Label Text="Term End"
+                       HorizontalOptions="CenterAndExpand" />
+
+                <local:CustomDatePicker x:Name="TermEndDatePicker"
+                                        IsEnabled="False"
+                                        TextColor="Black"
+                                        HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+
+        <ScrollView Grid.Row="2">
+            <VerticalStackLayout x:Name="coursesStackLayout" Margin="30"/>
+        </ScrollView>
+
+        <Grid Grid.Row="3" BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Grid.Row="0"
+                     HeightRequest="2"
+                     Color="WhiteSmoke"
+                     HorizontalOptions="FillAndExpand" />
+
+            <Grid Grid.Row="1" Margin="5,20,5,20" ColumnSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="EditTermBtn"
+                        Grid.Column="0"
+                        Text="Edit Term"
+                        SemanticProperties.Hint="Edit the current term"
+                        BackgroundColor="MidnightBlue"
+                        Clicked="EditTermBtn_Clicked"/>
+
+                <Button x:Name="AddCourseBtn"
+                        Grid.Column="1"
+                        Text="Add Course"
+                        SemanticProperties.Hint="Add a course"
+                        BackgroundColor="RoyalBlue"
+                        Clicked="AddCourseBtn_Clicked"/>
+
+                <Button x:Name="DeleteCourseBtn"
+                        Grid.Column="2"
+                        Text="Delete Course"
+                        SemanticProperties.Hint="Delete a course"
+                        BackgroundColor="RoyalBlue"
+                        Clicked="DeleteCourseBtn_Clicked"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

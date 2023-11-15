@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:bmcdani_academic_tracking"
+             x:Class="bmcdani_academic_tracking.Pages.AssessmentView"
+             Title="Assessments">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="AliceBlue">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="CourseAssessmentsTitleLbl"
+                   Grid.Row="0"
+                   Text="Course Assessments"
+                   FontSize="24"
+                   Margin="15"
+                   SemanticProperties.Hint="Course Assessments"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Center" />
+
+                <BoxView Grid.Row="1"
+                     HeightRequest="2"
+                     Color="WhiteSmoke"
+                     HorizontalOptions="FillAndExpand" />
+
+            </Grid>
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout x:Name="assessmentStackLayout" Margin="10"/>
+        </ScrollView>
+
+        <Grid Grid.Row="2" BackgroundColor="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Grid.Row="0"
+                 HeightRequest="2"
+                 Color="WhiteSmoke"
+                 HorizontalOptions="FillAndExpand" />
+
+            <Grid Grid.Row="1" Margin="5,20,5,20" ColumnSpacing="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="AddAssessmentBtn"
+                        Grid.Column="0"
+                        Text="Add"
+                        BackgroundColor="RoyalBlue"
+                        Clicked="AddAssessmentBtn_Clicked"/>
+                
+                <Button x:Name="EditAssessmentBtn"
+                        Grid.Column="1"
+                        Text="Edit"
+                        BackgroundColor="RoyalBlue"
+                        Clicked="EditAssessmentBtn_Clicked"/>
+
+                <Button x:Name="DeleteAssessmentBtn"
+                        Grid.Column="2"
+                        Text="Delete"
+                        BackgroundColor="RoyalBlue"
+                        Clicked="DeleteAssessmentBtn_Clicked"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
