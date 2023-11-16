@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmcdani_c971_task", "bmcdani_c971_task\bmcdani_c971_task.csproj", "{AE0BF67B-0172-43EF-88FA-5EDA7F75CB5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bmcdani_academic_tracking", "bmcdani_academic_tracking\bmcdani_academic_tracking.csproj", "{AE0BF67B-0172-43EF-88FA-5EDA7F75CB5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
